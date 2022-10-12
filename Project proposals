@@ -1,0 +1,9 @@
+Idea 1: We will create an application that uses the weatherUSA API, and WebAPI from Spotify for Developers in order to generate spotify playlists
+based on weather from a certain location. The database we intend to use is Microsoft SQL server. We intend to use 2 factor authentication by
+sending a code via email or message to the user. Most likely we will use python for our back end coding.
+
+Idea 2:
+We will create an application that uses user inputs to tell them what to eat based on user inputs for desired taste (sour, sweet, tart, etc.).
+Our app will use the documenU api and TraxMatching api in order to find restaurants that serve cuisine that match up with their respective tastes. 
+The database we intend to use is Microsoft SQL serverWe intend to use 2 factor authentication by sending a code via email or message to the user.
+We will most likely use python for the back end coding.
