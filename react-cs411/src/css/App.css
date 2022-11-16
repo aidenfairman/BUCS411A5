@@ -1,0 +1,81 @@
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  height: 30px;
+  background-color: #f1f1f1;
+}
+
+header .w .login {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.content {
+  padding-top: 70px;
+}
+
+.content .logo {
+  font-size: 60px;
+  text-align: center;
+}
+
+.content .search {
+  margin: 50px 0 0 200px;
+  line-height: 40px;
+}
+
+.content .search #searchBar {
+  padding-left: 3px;
+  width: 700px;
+  height: 40px;
+  border: 1px solid red;
+  border-radius: 3px;
+  vertical-align: bottom;
+  font-size: 30px;
+}
+
+.content .search button {
+  height: 40px;
+  width: 100px;
+  margin: 0;
+}
+
+.recipe_list {
+  margin-top: 50px;
+}
+
+.recipe_list .recipe {
+  margin: 0 auto;
+  border: 3px solid blue;
+  border-radius: 5px;
+  width: 800px;
+}
+
+.recipe_list .recipe .recipe_title {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.recipe_list .recipe .recipe_content {
+  padding: 30px;
+}
+
+.recipe_list .recipe .recipe_content .recipe_img {
+  float: left;
+}
+
+.recipe_list .recipe .recipe_content .recipe_img img {
+  width: 300px;
+}
+
+.recipe_list .recipe .recipe_content .recipe_ingredient_list {
+  float: left;
+  margin-left: 200px;
+}
+
+.recipe_list .recipe .recipe_content .recipe_ingredient_list .ingredient {
+  font-size: 14px;
+}
