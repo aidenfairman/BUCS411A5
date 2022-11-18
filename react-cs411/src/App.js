@@ -152,7 +152,7 @@ class Result extends React.Component {
       }
 
     }
-    return true
+    // return true
   }
 
   //Monitor change of search item and call queryAllRecipes if there is a change.
@@ -161,8 +161,9 @@ class Result extends React.Component {
       //If it is a different input, regenerate the recipe list.
       this.setState({
         recipe_list: []
+      }, () => {
+        this.queryAllRecipes(nextProps.search_item)
       })
-      this.queryAllRecipes(nextProps.search_item)
     }
   }
 
