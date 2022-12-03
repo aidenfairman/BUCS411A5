@@ -3,6 +3,7 @@ import axios from 'axios'
 import { v4 as uuid } from 'uuid'
 import "./css/base.css"
 import "./css/App.css"
+import TasteOptions from "./Components/TasteOptions";
 
 
 //Header component for login.
@@ -17,6 +18,7 @@ function Header () {
     </header >
   )
 }
+
 
 //Search component for searching a taste.
 class Search extends React.Component {
@@ -50,6 +52,7 @@ class Search extends React.Component {
     return (
       <div className="content w">
         <div className="logo">Food Search by Taste</div>
+        <TasteOptions />
         <div className="search">
           <input
             type="search"
