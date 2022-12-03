@@ -4,6 +4,8 @@ import { v4 as uuid } from 'uuid'
 import "./css/base.css"
 import "./css/App.css"
 import TasteOptions from "./Components/TasteOptions";
+import { Button, TextField } from "@mui/material"
+import { textTransform } from "@mui/system"
 
 
 //Header component for login.
@@ -54,18 +56,30 @@ class Search extends React.Component {
         <div className="logo">Food Search by Taste</div>
         <TasteOptions />
         <div className="search">
-          <input
+          {/* <input
             type="search"
             id="searchBar"
             placeholder="Enter Any Taste"
             value={this.state.search_item}
             onChange={this.searchItemChange}
           >
-          </input>
-          <button
+          </input> */}
+          <TextField
+            type="search"
+            placeholder="Enter Any Taste"
+            value={this.state.search_item}
+            onChange={this.searchItemChange}
+            sx={{width: "800px"}}
+            size="small"
+          >
+          </TextField>
+          <Button
+            sx={{textTransform:"none", height:"20px"}}
+            variant="contained"
             onClick={this.getSearchItemHandler}
+            size="medium"
           >Search!
-          </button>
+          </Button>
         </div>
       </div>
     )
