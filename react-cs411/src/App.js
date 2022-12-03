@@ -4,7 +4,7 @@ import { v4 as uuid } from 'uuid'
 import "./css/base.css"
 import "./css/App.css"
 import TasteOptions from "./Components/TasteOptions";
-import { Button, TextField } from "@mui/material"
+import { Button, Card, TextField } from "@mui/material"
 import { textTransform } from "@mui/system"
 
 
@@ -56,14 +56,6 @@ class Search extends React.Component {
         <div className="logo">Food Search by Taste</div>
         <TasteOptions />
         <div className="search">
-          {/* <input
-            type="search"
-            id="searchBar"
-            placeholder="Enter Any Taste"
-            value={this.state.search_item}
-            onChange={this.searchItemChange}
-          >
-          </input> */}
           <TextField
             type="search"
             placeholder="Enter Any Taste"
@@ -186,7 +178,7 @@ class Result extends React.Component {
   render () {
     return (
       <div className="recipe_list w">
-        <ul>
+        <ul> 
           {this.state.recipe_list.map(item => (
             <li key={item.id} className="recipe">
               <h1 className="recipe_title">{item.title}</h1>
