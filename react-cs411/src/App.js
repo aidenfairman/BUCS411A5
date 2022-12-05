@@ -3,6 +3,9 @@ import axios from 'axios'
 import { v4 as uuid } from 'uuid'
 import "./css/base.css"
 import "./css/App.css"
+import TasteOptions from "./Components/TasteOptions";
+import { Button, Card, TextField } from "@mui/material"
+import { textTransform } from "@mui/system"
 
 
 //Header component for login.
@@ -17,6 +20,7 @@ function Header () {
     </header >
   )
 }
+
 
 //Search component for searching a taste.
 class Search extends React.Component {
@@ -50,19 +54,24 @@ class Search extends React.Component {
     return (
       <div className="content w">
         <div className="logo">Food Search by Taste</div>
+        <TasteOptions />
         <div className="search">
-          <input
+          <TextField
             type="search"
-            id="searchBar"
             placeholder="Enter Any Taste"
             value={this.state.search_item}
             onChange={this.searchItemChange}
+            sx={{width: "800px"}}
+            size="small"
           >
-          </input>
-          <button
+          </TextField>
+          <Button
+            sx={{textTransform:"none", height:"20px"}}
+            variant="contained"
             onClick={this.getSearchItemHandler}
+            size="medium"
           >Search!
-          </button>
+          </Button>
         </div>
       </div>
     )
@@ -169,7 +178,7 @@ class Result extends React.Component {
   render () {
     return (
       <div className="recipe_list w">
-        <ul>
+        <ul> 
           {this.state.recipe_list.map(item => (
             <li key={item.id} className="recipe">
               <h1 className="recipe_title">{item.title}</h1>
