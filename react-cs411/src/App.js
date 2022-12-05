@@ -25,7 +25,7 @@ function Header () {
 //Search component for searching a taste.
 class Search extends React.Component {
   state = {
-    search_item: ""  //Holds for the input user enters.
+    search_item: "",  //Holds for the input user enters. 
   }
 
   //Update search_item when the input changes.
@@ -81,18 +81,21 @@ class Search extends React.Component {
 //Result component for displaying result.
 class Result extends React.Component {
   state = {
-    recipe_list: []
+    recipe_list: [],
+    //****** ApiKey ******/
+    key: "b589b93113194426aaf359c262390e17"
   }
 
   //Call the random recipe api for one recipt.
-  queryOneRecipe () {
+  queryRecipes () {
     return axios({
       url: 'https://api.spoonacular.com/recipes/random',
       params: {
-        apiKey: "3c8b0356c9fe4e68838c5a700de725a0"
+        apiKey: this.state.key,
+        number: 10
       }
     }).then(response => {
-      return response.data.recipes[0]
+      return response.data.recipes
     }).catch((error) => {
       console.log(error)
     })
@@ -103,7 +106,7 @@ class Result extends React.Component {
     return axios({
       url: 'https://api.spoonacular.com/recipes/' + recipeID + '/tasteWidget.json',
       params: {
-        apiKey: "3c8b0356c9fe4e68838c5a700de725a0"
+        apiKey: this.state.key
       }
     }).then(response => {
       return response.data
@@ -113,9 +116,11 @@ class Result extends React.Component {
   }
 
   //Generate a list of recipes .
-  async queryAllRecipes (queryTaste) {
-    while (this.state.recipe_list.length < 3) {  //Number of recipes returned.
-      const recipe = await this.queryOneRecipe()
+  async getApplicableRecipes (queryTaste) {
+    //Number of recipes returned.
+    const recipes = await this.queryRecipes()
+    console.log(recipes)
+    recipes.map(async (recipe) => {
       const taste_stats = await this.queryRecipeTaste(recipe.id)
       console.log(taste_stats)
       switch (queryTaste) {
@@ -128,7 +133,7 @@ class Result extends React.Component {
           break
 
         case "salty":
-          if (taste_stats.saltiness >= 50) {
+          if (taste_stats.saltiness >= 30) {
             this.setState({
               recipe_list: [...this.state.recipe_list, recipe]
             })
@@ -136,7 +141,7 @@ class Result extends React.Component {
           break
 
         case "sour":
-          if (taste_stats.sourness >= 50) {
+          if (taste_stats.sourness >= 20) {
             this.setState({
               recipe_list: [...this.state.recipe_list, recipe]
             })
@@ -144,7 +149,7 @@ class Result extends React.Component {
           break
 
         case "bitter":
-          if (taste_stats.bitterness >= 50) {
+          if (taste_stats.bitterness >= 20) {
             this.setState({
               recipe_list: [...this.state.recipe_list, recipe]
             })
@@ -152,26 +157,24 @@ class Result extends React.Component {
           break
 
         case "savory":
-          if (taste_stats.savoriness >= 50) {
+          if (taste_stats.savoriness >= 30) {
             this.setState({
               recipe_list: [...this.state.recipe_list, recipe]
             })
           }
           break
       }
-
-    }
-    return true
+      return true
+    })
   }
 
-  //Monitor change of search item and call queryAllRecipes if there is a change.
+  //Monitor change of search item and call getApplicableRecipes if there is a change.
   componentWillReceiveProps (nextProps) {
     if (nextProps.search_item !== this.props.search_item) {
-      //If it is a different input, regenerate the recipe list.
       this.setState({
         recipe_list: []
-      })
-      this.queryAllRecipes(nextProps.search_item)
+      }, () => { this.getApplicableRecipes(nextProps.search_item) })
+      //If it is a different input, regenerate the recipe list.
     }
   }
 
