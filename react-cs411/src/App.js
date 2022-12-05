@@ -66,7 +66,7 @@ class Search extends React.Component {
           >
           </TextField>
           <Button
-            sx={{textTransform:"none", height:"20px"}}
+            sx={{textTransform:"none", height:"20px", backgroundColor:"#F6932E"}}
             variant="contained"
             onClick={this.getSearchItemHandler}
             size="medium"

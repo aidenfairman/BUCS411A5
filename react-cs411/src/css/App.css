@@ -5,7 +5,11 @@
 
 header {
   height: 30px;
-  background-color: #f1f1f1;
+  background-color: #57a6f8;
+}
+
+a {
+  color:rgb(245, 242, 242);
 }
 
 header .w .login {
@@ -25,6 +29,10 @@ header .w .login {
 .content .search {
   margin: 50px 0 0 200px;
   line-height: 40px;
+}
+
+.logo{
+  color: #57a6f8;
 }
 
 /* .content .search #searchBar {
