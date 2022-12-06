@@ -61,12 +61,12 @@ class Search extends React.Component {
             placeholder="Enter Any Taste"
             value={this.state.search_item}
             onChange={this.searchItemChange}
-            sx={{width: "800px"}}
+            sx={{width: "700px"}}
             size="small"
           >
           </TextField>
           <Button
-            sx={{textTransform:"none", height:"20px", backgroundColor:"#F6932E"}}
+            sx={{textTransform:"none", height:"20px", backgroundColor:"#0096FF"}}
             variant="contained"
             onClick={this.getSearchItemHandler}
             size="medium"

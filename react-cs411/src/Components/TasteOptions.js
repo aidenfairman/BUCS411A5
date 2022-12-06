@@ -7,7 +7,7 @@ const TasteOptions = () => {
         <div className="container">
             <div className="options-bar">
                 <div className="options">
-                    Sweet Sour Salty Savory Bitter
+                    <p>Sweet Sour Salty Savory Bitter</p>
                 </div>
             </div>
         </div>
