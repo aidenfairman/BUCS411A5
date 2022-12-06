@@ -33,6 +33,12 @@ header .w .login {
 
 .logo{
   color: #57a6f8;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  padding-right: 20px;
+  box-shadow: 10px 5px 5px rgb(68, 155, 222);
+  border:2px solid rgb(52, 172, 236);
+  border-radius: 66px;
 }
 
 /* .content .search #searchBar {
@@ -57,7 +63,7 @@ header .w .login {
 
 .recipe_list .recipe {
   margin: 0 auto;
-  border: 3px solid blue;
+  border: 3px solid #57a6f8;
   border-radius: 5px;
   width: 800px;
 }
@@ -86,4 +92,8 @@ header .w .login {
 
 .recipe_list .recipe .recipe_content .recipe_ingredient_list .ingredient {
   font-size: 14px;
+}
+
+.like-button{
+  float:right;
 }

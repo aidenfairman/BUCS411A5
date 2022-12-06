@@ -4,8 +4,10 @@ import { v4 as uuid } from 'uuid'
 import "./css/base.css"
 import "./css/App.css"
 import TasteOptions from "./Components/TasteOptions"
+import FavRecipes from "./Components/FavRecipes"
 import { Button, Card, TextField } from "@mui/material"
 import { textTransform } from "@mui/system"
+import FavoriteIcon from '@mui/icons-material/Favorite'
 
 
 //Header component for login.
@@ -38,18 +40,6 @@ class Search extends React.Component {
 
   //Sends the input to App when clicks on the button.
   getSearchItemHandler = () => {
-    // if (this.state.search_item === "sweet" ||
-    //   this.state.search_item === "salty" ||
-    //   this.state.search_item === "sour" ||
-    //   this.state.search_item === "bitter" ||
-    //   this.state.search_item === "savory")  //Search only based on valid input.
-    // {
-    //   this.props.getSearchItem(this.state.search_item)
-    // }
-    // else {
-    //   alert("The search item can only be sweet, salty, sour, bitter, or savory.")
-    // }
-
     this.setState({
       parsed_search_item: this.state.search_item.toLowerCase().split(" ")
     }, () => {
@@ -79,18 +69,20 @@ class Search extends React.Component {
       <div className="content w">
         <div className="logo">Food Search by Taste</div>
         <TasteOptions />
+        {/* TODO: need to pass in results from all saved recipes when we press this button */}
+        <FavRecipes />
         <div className="search">
           <TextField
             type="search"
             placeholder="Enter Any Taste"
             value={this.state.search_item}
             onChange={this.searchItemChange}
-            sx={{ width: "800px" }}
+            sx={{ width: "700px" }}
             size="small"
           >
           </TextField>
           <Button
-            sx={{ textTransform: "none", height: "20px", backgroundColor: "#F6932E" }}
+            sx={{ textTransform: "none", height: "20px", backgroundColor: "#0096FF" }}
             variant="contained"
             onClick={this.getSearchItemHandler}
             size="medium"
@@ -107,7 +99,7 @@ class Result extends React.Component {
   state = {
     recipe_list: [],
     //****** ApiKey ******/
-    key: "b589b93113194426aaf359c262390e17"
+    key: "3c8b0356c9fe4e68838c5a700de725a0"
   }
 
   //Call the random recipe api for one recipt.
@@ -138,6 +130,51 @@ class Result extends React.Component {
       console.log(error)
     })
   }
+
+  // Call Liked Recipes Api when to allow user to save a recipe
+  saveRecipe (userID, recipeID) {
+    return axios({
+      url: 'http://localhost:8090/api/likedRecipe/addLikeRecipe',
+      params: {
+        userId: null, //null temporarily
+        recipeId: recipeID
+      }
+    }).then(response => {
+      return response.data
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+  // retreives all the recipe saved by a user
+  getSavedRecipes () {
+    return axios({
+      url: 'http://localhost:8090/api/likedRecipe/findByUserId',
+      params: {
+        userId: null, //null temporarily
+      }
+    }).then(response => {
+      return response.data
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+  // deletes a recipe selected by a  user
+  deleteRecipe (recipeID) {
+    return axios({
+      url: 'http://localhost:8090/api/likedRecipe/delete',
+      params: {
+        userId: null, //null temporarily
+        recipeId: recipeID
+      }
+    }).then(response => {
+      return response.data
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
 
   //Generate a list of recipes .
   async getApplicableRecipes (queryTaste) {
@@ -223,6 +260,13 @@ class Result extends React.Component {
                     )
                     )}
                   </ul>
+                </div>
+                <div className="like-button">
+                  {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
+                  <Button
+                    onClick={this.saveRecipe(null, item.id)} >
+                    <FavoriteIcon />
+                  </Button>
                 </div>
               </div>
             </li>
