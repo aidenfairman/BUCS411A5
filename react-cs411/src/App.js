@@ -6,6 +6,7 @@ import "./css/App.css"
 import TasteOptions from "./Components/TasteOptions";
 import { Button, Card, TextField } from "@mui/material"
 import { textTransform } from "@mui/system"
+import FavoriteIcon from '@mui/icons-material/Favorite'
 
 
 //Header component for login.
@@ -83,7 +84,7 @@ class Result extends React.Component {
   state = {
     recipe_list: [],
     //****** ApiKey ******/
-    key: "b589b93113194426aaf359c262390e17"
+    key: "3c8b0356c9fe4e68838c5a700de725a0"
   }
 
   //Call the random recipe api for one recipt.
@@ -198,6 +199,11 @@ class Result extends React.Component {
                     )
                     )}
                   </ul>
+                </div>
+                <div className="like-button">
+                  <Button sx={{color:"red"}}>
+                    <FavoriteIcon/>
+                  </Button> 
                 </div>
               </div>
             </li>
