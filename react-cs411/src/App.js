@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid'
 import "./css/base.css"
 import "./css/App.css"
 import TasteOptions from "./Components/TasteOptions";
+import FavRecipes from "./Components/FavRecipes"
 import { Button, Card, TextField } from "@mui/material"
 import { textTransform } from "@mui/system"
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -56,6 +57,8 @@ class Search extends React.Component {
       <div className="content w">
         <div className="logo">Food Search by Taste</div>
         <TasteOptions />
+        {/* TODO: need to pass in results from all saved recipes when we press this button */}
+        <FavRecipes /> 
         <div className="search">
           <TextField
             type="search"
@@ -115,6 +118,51 @@ class Result extends React.Component {
       console.log(error)
     })
   }
+
+  // Call Liked Recipes Api when to allow user to save a recipe
+  saveRecipe (userID, recipeID) {
+    return axios({
+      url: 'http://localhost:8090/api/likedRecipe/addLikeRecipe',
+      params: {
+        userId: null, //null temporarily
+        recipeId: recipeID
+      }
+    }).then(response => {
+      return response.data
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+  // retreives all the recipe saved by a user
+  getSavedRecipes () {
+    return axios({
+      url: 'http://localhost:8090/api/likedRecipe/findByUserId',
+      params: {
+        userId: null, //null temporarily
+      }
+    }).then(response => {
+      return response.data
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+  // deletes a recipe selected by a  user
+  deleteRecipe (recipeID) {
+    return axios({
+      url: 'http://localhost:8090/api/likedRecipe/delete',
+      params: {
+        userId: null, //null temporarily
+        recipeId: recipeID
+      }
+    }).then(response => {
+      return response.data
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
 
   //Generate a list of recipes .
   async getApplicableRecipes (queryTaste) {
@@ -201,7 +249,9 @@ class Result extends React.Component {
                   </ul>
                 </div>
                 <div className="like-button">
-                  <Button sx={{color:"red"}}>
+                {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
+                  <Button 
+                    onClick={this.saveRecipe(null, item.id)} >
                     <FavoriteIcon/>
                   </Button> 
                 </div>
