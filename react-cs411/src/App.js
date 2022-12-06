@@ -99,7 +99,7 @@ class Result extends React.Component {
   state = {
     recipe_list: [],
     //****** ApiKey ******/
-    key: "3c8b0356c9fe4e68838c5a700de725a0"
+    key: "ad17578f923946ffb9d9fe3902c7ac0b"
   }
 
   //Call the random recipe api for one recipt.
@@ -184,13 +184,11 @@ class Result extends React.Component {
     for (let x = 0; x < recipes.length; x++) {
       const taste_stats = await this.queryRecipeTaste(recipes[x].id)
       console.log(taste_stats)
-      console.log(x)
       if (queryTaste.includes("sweet")) {
         if (taste_stats.sweetness >= 50) {
           this.setState({
             recipe_list: [...this.state.recipe_list, recipes[x]]
           })
-          console.log(this.state.recipe_list)
         }
       }
       else if (queryTaste.includes("salty")) {
@@ -198,7 +196,6 @@ class Result extends React.Component {
           this.setState({
             recipe_list: [...this.state.recipe_list, recipes[x]]
           })
-          console.log(this.state.recipe_list)
         }
       }
 
@@ -207,7 +204,6 @@ class Result extends React.Component {
           this.setState({
             recipe_list: [...this.state.recipe_list, recipes[x]]
           })
-          console.log(this.state.recipe_list)
         }
 
       }
@@ -263,17 +259,17 @@ class Result extends React.Component {
                 </div>
                 <div className="like-button">
                   {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
-                  <Button
+                  {/* <Button
                     onClick={this.saveRecipe(null, item.id)} >
                     <FavoriteIcon />
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </li>
           )
           )}
         </ul>
-      </div>
+      </div >
     )
   }
 }
