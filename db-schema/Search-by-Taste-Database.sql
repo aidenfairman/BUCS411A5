@@ -9,6 +9,7 @@ CREATE TABLE Users(
  user_name VARCHAR(100),
  email VARCHAR(100),
  creation_date DATE,
+ diet_goals VARCHAR(100),
  password VARCHAR(100) NOT NULL,
  PRIMARY KEY (user_id)
  );
