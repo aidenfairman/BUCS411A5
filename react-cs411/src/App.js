@@ -4,8 +4,10 @@ import { v4 as uuid } from 'uuid'
 import "./css/base.css"
 import "./css/App.css"
 import TasteOptions from "./Components/TasteOptions";
+import FavRecipes from "./Components/FavRecipes"
 import { Button, Card, TextField } from "@mui/material"
 import { textTransform } from "@mui/system"
+import FavoriteIcon from '@mui/icons-material/Favorite'
 
 
 //Header component for login.
@@ -25,7 +27,7 @@ function Header () {
 //Search component for searching a taste.
 class Search extends React.Component {
   state = {
-    search_item: ""  //Holds for the input user enters.
+    search_item: "",  //Holds for the input user enters. 
   }
 
   //Update search_item when the input changes.
@@ -55,18 +57,20 @@ class Search extends React.Component {
       <div className="content w">
         <div className="logo">Food Search by Taste</div>
         <TasteOptions />
+        {/* TODO: need to pass in results from all saved recipes when we press this button */}
+        <FavRecipes /> 
         <div className="search">
           <TextField
             type="search"
             placeholder="Enter Any Taste"
             value={this.state.search_item}
             onChange={this.searchItemChange}
-            sx={{width: "800px"}}
+            sx={{width: "700px"}}
             size="small"
           >
           </TextField>
           <Button
-            sx={{textTransform:"none", height:"20px"}}
+            sx={{textTransform:"none", height:"20px", backgroundColor:"#0096FF"}}
             variant="contained"
             onClick={this.getSearchItemHandler}
             size="medium"
@@ -81,18 +85,21 @@ class Search extends React.Component {
 //Result component for displaying result.
 class Result extends React.Component {
   state = {
-    recipe_list: []
+    recipe_list: [],
+    //****** ApiKey ******/
+    key: "3c8b0356c9fe4e68838c5a700de725a0"
   }
 
   //Call the random recipe api for one recipt.
-  queryOneRecipe () {
+  queryRecipes () {
     return axios({
       url: 'https://api.spoonacular.com/recipes/random',
       params: {
-        apiKey: "3c8b0356c9fe4e68838c5a700de725a0"
+        apiKey: this.state.key,
+        number: 10
       }
     }).then(response => {
-      return response.data.recipes[0]
+      return response.data.recipes
     }).catch((error) => {
       console.log(error)
     })
@@ -103,7 +110,7 @@ class Result extends React.Component {
     return axios({
       url: 'https://api.spoonacular.com/recipes/' + recipeID + '/tasteWidget.json',
       params: {
-        apiKey: "3c8b0356c9fe4e68838c5a700de725a0"
+        apiKey: this.state.key
       }
     }).then(response => {
       return response.data
@@ -112,10 +119,57 @@ class Result extends React.Component {
     })
   }
 
+  // Call Liked Recipes Api when to allow user to save a recipe
+  saveRecipe (userID, recipeID) {
+    return axios({
+      url: 'http://localhost:8090/api/likedRecipe/addLikeRecipe',
+      params: {
+        userId: null, //null temporarily
+        recipeId: recipeID
+      }
+    }).then(response => {
+      return response.data
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+  // retreives all the recipe saved by a user
+  getSavedRecipes () {
+    return axios({
+      url: 'http://localhost:8090/api/likedRecipe/findByUserId',
+      params: {
+        userId: null, //null temporarily
+      }
+    }).then(response => {
+      return response.data
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+  // deletes a recipe selected by a  user
+  deleteRecipe (recipeID) {
+    return axios({
+      url: 'http://localhost:8090/api/likedRecipe/delete',
+      params: {
+        userId: null, //null temporarily
+        recipeId: recipeID
+      }
+    }).then(response => {
+      return response.data
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+
   //Generate a list of recipes .
-  async queryAllRecipes (queryTaste) {
-    while (this.state.recipe_list.length < 3) {  //Number of recipes returned.
-      const recipe = await this.queryOneRecipe()
+  async getApplicableRecipes (queryTaste) {
+    //Number of recipes returned.
+    const recipes = await this.queryRecipes()
+    console.log(recipes)
+    recipes.map(async (recipe) => {
       const taste_stats = await this.queryRecipeTaste(recipe.id)
       console.log(taste_stats)
       switch (queryTaste) {
@@ -128,7 +182,7 @@ class Result extends React.Component {
           break
 
         case "salty":
-          if (taste_stats.saltiness >= 50) {
+          if (taste_stats.saltiness >= 30) {
             this.setState({
               recipe_list: [...this.state.recipe_list, recipe]
             })
@@ -136,7 +190,7 @@ class Result extends React.Component {
           break
 
         case "sour":
-          if (taste_stats.sourness >= 50) {
+          if (taste_stats.sourness >= 20) {
             this.setState({
               recipe_list: [...this.state.recipe_list, recipe]
             })
@@ -144,7 +198,7 @@ class Result extends React.Component {
           break
 
         case "bitter":
-          if (taste_stats.bitterness >= 50) {
+          if (taste_stats.bitterness >= 20) {
             this.setState({
               recipe_list: [...this.state.recipe_list, recipe]
             })
@@ -152,26 +206,24 @@ class Result extends React.Component {
           break
 
         case "savory":
-          if (taste_stats.savoriness >= 50) {
+          if (taste_stats.savoriness >= 30) {
             this.setState({
               recipe_list: [...this.state.recipe_list, recipe]
             })
           }
           break
       }
-
-    }
-    return true
+      return true
+    })
   }
 
-  //Monitor change of search item and call queryAllRecipes if there is a change.
+  //Monitor change of search item and call getApplicableRecipes if there is a change.
   componentWillReceiveProps (nextProps) {
     if (nextProps.search_item !== this.props.search_item) {
-      //If it is a different input, regenerate the recipe list.
       this.setState({
         recipe_list: []
-      })
-      this.queryAllRecipes(nextProps.search_item)
+      }, () => { this.getApplicableRecipes(nextProps.search_item) })
+      //If it is a different input, regenerate the recipe list.
     }
   }
 
@@ -195,6 +247,13 @@ class Result extends React.Component {
                     )
                     )}
                   </ul>
+                </div>
+                <div className="like-button">
+                {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
+                  <Button 
+                    onClick={this.saveRecipe(null, item.id)} >
+                    <FavoriteIcon/>
+                  </Button> 
                 </div>
               </div>
             </li>
