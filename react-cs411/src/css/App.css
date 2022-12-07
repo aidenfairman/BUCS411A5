@@ -97,3 +97,10 @@ header .w .login {
 .like-button {
   float: right;
 }
+
+.instructions {
+  margin: 30px auto;
+  width: 734px;
+  line-height: 20px;
+  font-size: 14px;
+}
