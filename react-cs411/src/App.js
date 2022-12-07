@@ -4,7 +4,8 @@ import { v4 as uuid } from 'uuid'
 import "./css/base.css"
 import "./css/App.css"
 import TasteOptions from "./Components/TasteOptions";
-import FavRecipes from "./Components/FavRecipes"
+import FavRecipes from "./Components/FavRecipes";
+import HowToUse from "./Components/HowToUse";
 import { Button, Card, TextField } from "@mui/material"
 import { textTransform } from "@mui/system"
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -76,6 +77,10 @@ class Search extends React.Component {
             size="medium"
           >Search!
           </Button>
+        </div>
+
+        <div className="site-instructions">
+          <HowToUse />
         </div>
       </div>
     )
