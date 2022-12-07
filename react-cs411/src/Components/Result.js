@@ -3,9 +3,6 @@ import axios from 'axios'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { Button, Card, TextField, Collapse } from "@mui/material"
-import CardHeader from '@mui/material/CardHeader'
-import CardMedia from '@mui/material/CardMedia'
-import CardContent from '@mui/material/CardContent'
 import CardActions from '@mui/material/CardActions'
 import IconButton, { IconButtonProps } from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
@@ -1070,10 +1067,10 @@ export default class Result extends React.Component {
                   </div>
                   <div className="like-button">
                     {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
-                    {/* <Button
-                    onClick={this.saveRecipe(null, item.id)} >
-                    <FavoriteIcon />
-                  </Button> */}
+                    <Button
+                      onClick={this.saveRecipe(null, item.id)} >
+                      <FavoriteIcon />
+                    </Button>
                   </div>
                 </div>
                 <CardActions disableSpacing>
