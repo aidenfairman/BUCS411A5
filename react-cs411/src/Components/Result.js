@@ -6,6 +6,7 @@ import { Button, Card, TextField, Collapse } from "@mui/material"
 import CardActions from '@mui/material/CardActions'
 import IconButton, { IconButtonProps } from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
+import { spacing } from '@mui/system'
 
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -35,41 +36,64 @@ export default class Result extends React.Component {
       "veryPopular": false,
       "sustainable": false,
       "lowFodmap": false,
-      "weightWatcherSmartPoints": 26,
+      "weightWatcherSmartPoints": 12,
       "gaps": "no",
       "preparationMinutes": -1,
       "cookingMinutes": -1,
-      "aggregateLikes": 37,
-      "healthScore": 36,
+      "aggregateLikes": 24,
+      "healthScore": 1,
       "creditsText": "Foodista.com – The Cooking Encyclopedia Everyone Can Edit",
       "license": "CC BY 3.0",
       "sourceName": "Foodista",
-      "pricePerServing": 441.5,
+      "pricePerServing": 139.7,
       "extendedIngredients": [
         {
-          "id": 18079,
-          "aisle": "Pasta and Rice",
-          "image": "breadcrumbs.jpg",
+          "id": 10018617,
+          "aisle": "Sweet Snacks;Baking",
+          "image": "graham-crackers.jpg",
           "consistency": "SOLID",
-          "name": "bread crumbs",
-          "nameClean": "breadcrumbs",
-          "original": "50g homemade bread crumbs",
-          "originalName": "homemade bread crumbs",
-          "amount": 50.0,
-          "unit": "g",
-          "meta": [
-            "homemade"
-          ],
+          "name": "graham cracker crumbs",
+          "nameClean": "graham cracker crumbs",
+          "original": "1 1/3 cups graham wafer crumbs",
+          "originalName": "graham wafer crumbs",
+          "amount": 1.3333334,
+          "unit": "cups",
+          "meta": [],
           "measures": {
             "us": {
-              "amount": 1.764,
-              "unitShort": "oz",
-              "unitLong": "ounces"
+              "amount": 1.333,
+              "unitShort": "cups",
+              "unitLong": "cups"
             },
             "metric": {
-              "amount": 50.0,
-              "unitShort": "g",
-              "unitLong": "grams"
+              "amount": 315.451,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 19335,
+          "aisle": "Baking",
+          "image": "sugar-in-bowl.png",
+          "consistency": "SOLID",
+          "name": "sugar",
+          "nameClean": "sugar",
+          "original": "3 tablespoons sugar",
+          "originalName": "sugar",
+          "amount": 3,
+          "unit": "tablespoons",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 3,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
+            },
+            "metric": {
+              "amount": 3,
+              "unitShort": "Tbsps",
+              "unitLong": "Tbsps"
             }
           }
         },
@@ -80,626 +104,264 @@ export default class Result extends React.Component {
           "consistency": "SOLID",
           "name": "butter",
           "nameClean": "butter",
-          "original": "50 g butter",
-          "originalName": "butter",
-          "amount": 50.0,
-          "unit": "g",
-          "meta": [],
-          "measures": {
-            "us": {
-              "amount": 1.764,
-              "unitShort": "oz",
-              "unitLong": "ounces"
-            },
-            "metric": {
-              "amount": 50.0,
-              "unitShort": "g",
-              "unitLong": "grams"
-            }
-          }
-        },
-        {
-          "id": 10011693,
-          "aisle": "Canned and Jarred",
-          "image": "tomatoes-canned.png",
-          "consistency": "SOLID",
-          "name": "canned tomatoes",
-          "nameClean": "canned tomatoes",
-          "original": "480g chopped tomatoes from a can",
-          "originalName": "chopped tomatoes from a can",
-          "amount": 480.0,
-          "unit": "g",
+          "original": "1/3 cup melted butter",
+          "originalName": "melted butter",
+          "amount": 0.33333334,
+          "unit": "cup",
           "meta": [
-            "chopped"
+            "melted"
           ],
           "measures": {
             "us": {
-              "amount": 1.058,
-              "unitShort": "lb",
-              "unitLong": "pounds"
-            },
-            "metric": {
-              "amount": 480.0,
-              "unitShort": "g",
-              "unitLong": "grams"
-            }
-          }
-        },
-        {
-          "id": 11209,
-          "aisle": "Produce",
-          "image": "eggplant.png",
-          "consistency": "SOLID",
-          "name": "egg plants",
-          "nameClean": "eggplant",
-          "original": "2-4 egg plants, thinly sliced",
-          "originalName": "egg plants, thinly sliced",
-          "amount": 2.0,
-          "unit": "",
-          "meta": [
-            "thinly sliced"
-          ],
-          "measures": {
-            "us": {
-              "amount": 2.0,
-              "unitShort": "",
-              "unitLong": ""
-            },
-            "metric": {
-              "amount": 2.0,
-              "unitShort": "",
-              "unitLong": ""
-            }
-          }
-        },
-        {
-          "id": 1125,
-          "aisle": "Milk, Eggs, Other Dairy",
-          "image": "egg-yolk.jpg",
-          "consistency": "SOLID",
-          "name": "egg yolks",
-          "nameClean": "egg yolk",
-          "original": "3 egg yolks",
-          "originalName": "egg yolks",
-          "amount": 3.0,
-          "unit": "",
-          "meta": [],
-          "measures": {
-            "us": {
-              "amount": 3.0,
-              "unitShort": "",
-              "unitLong": ""
-            },
-            "metric": {
-              "amount": 3.0,
-              "unitShort": "",
-              "unitLong": ""
-            }
-          }
-        },
-        {
-          "id": 1019,
-          "aisle": "Cheese",
-          "image": "feta.png",
-          "consistency": "SOLID",
-          "name": "feta cheese",
-          "nameClean": "feta cheese",
-          "original": "230g feta cheese, grated",
-          "originalName": "feta cheese, grated",
-          "amount": 230.0,
-          "unit": "g",
-          "meta": [
-            "grated"
-          ],
-          "measures": {
-            "us": {
-              "amount": 8.113,
-              "unitShort": "oz",
-              "unitLong": "ounces"
-            },
-            "metric": {
-              "amount": 230.0,
-              "unitShort": "g",
-              "unitLong": "grams"
-            }
-          }
-        },
-        {
-          "id": 20081,
-          "aisle": "Baking",
-          "image": "flour.png",
-          "consistency": "SOLID",
-          "name": "flour",
-          "nameClean": "wheat flour",
-          "original": "50 g flour",
-          "originalName": "flour",
-          "amount": 50.0,
-          "unit": "g",
-          "meta": [],
-          "measures": {
-            "us": {
-              "amount": 1.764,
-              "unitShort": "oz",
-              "unitLong": "ounces"
-            },
-            "metric": {
-              "amount": 50.0,
-              "unitShort": "g",
-              "unitLong": "grams"
-            }
-          }
-        },
-        {
-          "id": 11215,
-          "aisle": "Produce",
-          "image": "garlic.png",
-          "consistency": "SOLID",
-          "name": "garlic",
-          "nameClean": "garlic",
-          "original": "4 cloves garlic, finely chopped",
-          "originalName": "garlic, finely chopped",
-          "amount": 4.0,
-          "unit": "cloves",
-          "meta": [
-            "finely chopped"
-          ],
-          "measures": {
-            "us": {
-              "amount": 4.0,
-              "unitShort": "cloves",
-              "unitLong": "cloves"
-            },
-            "metric": {
-              "amount": 4.0,
-              "unitShort": "cloves",
-              "unitLong": "cloves"
-            }
-          }
-        },
-        {
-          "id": 2001,
-          "aisle": "Spices and Seasonings",
-          "image": "allspice-ground.jpg",
-          "consistency": "SOLID",
-          "name": "ground allspice",
-          "nameClean": "allspice",
-          "original": "¼ tsp ground allspice",
-          "originalName": "ground allspice",
-          "amount": 0.25,
-          "unit": "tsp",
-          "meta": [],
-          "measures": {
-            "us": {
-              "amount": 0.25,
-              "unitShort": "tsps",
-              "unitLong": "teaspoons"
-            },
-            "metric": {
-              "amount": 0.25,
-              "unitShort": "tsps",
-              "unitLong": "teaspoons"
-            }
-          }
-        },
-        {
-          "id": 1012010,
-          "aisle": "Spices and Seasonings",
-          "image": "cinnamon.jpg",
-          "consistency": "SOLID",
-          "name": "ground cinnamon",
-          "nameClean": "ground cinnamon",
-          "original": "¼ tsp ground cinnamon",
-          "originalName": "ground cinnamon",
-          "amount": 0.25,
-          "unit": "tsp",
-          "meta": [],
-          "measures": {
-            "us": {
-              "amount": 0.25,
-              "unitShort": "tsps",
-              "unitLong": "teaspoons"
-            },
-            "metric": {
-              "amount": 0.25,
-              "unitShort": "tsps",
-              "unitLong": "teaspoons"
-            }
-          }
-        },
-        {
-          "id": 2025,
-          "aisle": "Spices and Seasonings",
-          "image": "ground-nutmeg.jpg",
-          "consistency": "SOLID",
-          "name": "ground nutmeg",
-          "nameClean": "nutmeg",
-          "original": "½ tsp ground nutmeg",
-          "originalName": "ground nutmeg",
-          "amount": 0.5,
-          "unit": "tsp",
-          "meta": [],
-          "measures": {
-            "us": {
-              "amount": 0.5,
-              "unitShort": "tsps",
-              "unitLong": "teaspoons"
-            },
-            "metric": {
-              "amount": 0.5,
-              "unitShort": "tsps",
-              "unitLong": "teaspoons"
-            }
-          }
-        },
-        {
-          "id": 1002030,
-          "aisle": "Spices and Seasonings",
-          "image": "pepper.jpg",
-          "consistency": "SOLID",
-          "name": "ground pepper",
-          "nameClean": "black pepper",
-          "original": "Salt and ground white pepper",
-          "originalName": "Salt and ground white pepper",
-          "amount": 4.0,
-          "unit": "servings",
-          "meta": [
-            "white"
-          ],
-          "measures": {
-            "us": {
-              "amount": 4.0,
-              "unitShort": "servings",
-              "unitLong": "servings"
-            },
-            "metric": {
-              "amount": 4.0,
-              "unitShort": "servings",
-              "unitLong": "servings"
-            }
-          }
-        },
-        {
-          "id": 23557,
-          "aisle": "Meat",
-          "image": "fresh-ground-beef.jpg",
-          "consistency": "SOLID",
-          "name": "lean beef",
-          "nameClean": "95 percent lean ground beef",
-          "original": "400 g lean minced beef",
-          "originalName": "lean minced beef",
-          "amount": 400.0,
-          "unit": "g",
-          "meta": [
-            "lean",
-            "minced"
-          ],
-          "measures": {
-            "us": {
-              "amount": 14.11,
-              "unitShort": "oz",
-              "unitLong": "ounces"
-            },
-            "metric": {
-              "amount": 400.0,
-              "unitShort": "g",
-              "unitLong": "grams"
-            }
-          }
-        },
-        {
-          "id": 1077,
-          "aisle": "Milk, Eggs, Other Dairy",
-          "image": "milk.png",
-          "consistency": "LIQUID",
-          "name": "milk",
-          "nameClean": "milk",
-          "original": "250 ml warm milk",
-          "originalName": "warm milk",
-          "amount": 250.0,
-          "unit": "ml",
-          "meta": [],
-          "measures": {
-            "us": {
-              "amount": 1.057,
+              "amount": 0.333,
               "unitShort": "cups",
               "unitLong": "cups"
             },
             "metric": {
-              "amount": 250.0,
+              "amount": 78.863,
               "unitShort": "ml",
               "unitLong": "milliliters"
             }
           }
         },
         {
-          "id": 4053,
-          "aisle": "Oil, Vinegar, Salad Dressing",
-          "image": "olive-oil.jpg",
+          "id": 1001053,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "fluid-cream.jpg",
           "consistency": "LIQUID",
-          "name": "olive oil",
-          "nameClean": "olive oil",
-          "original": "1 Tbs olive oil",
-          "originalName": "olive oil",
-          "amount": 1.0,
-          "unit": "Tbs",
+          "name": "whipping cream",
+          "nameClean": "whipping cream",
+          "original": "1/3 cup whipping cream",
+          "originalName": "whipping cream",
+          "amount": 0.33333334,
+          "unit": "cup",
           "meta": [],
           "measures": {
             "us": {
-              "amount": 1.0,
-              "unitShort": "Tbs",
-              "unitLong": "Tb"
+              "amount": 0.333,
+              "unitShort": "cups",
+              "unitLong": "cups"
             },
             "metric": {
-              "amount": 1.0,
-              "unitShort": "Tbs",
-              "unitLong": "Tb"
+              "amount": 78.863,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
             }
           }
         },
         {
-          "id": 4053,
-          "aisle": "Oil, Vinegar, Salad Dressing",
-          "image": "olive-oil.jpg",
-          "consistency": "LIQUID",
-          "name": "olive oil",
-          "nameClean": "olive oil",
-          "original": "Olive oil",
-          "originalName": "Olive oil",
-          "amount": 4.0,
-          "unit": "servings",
-          "meta": [],
-          "measures": {
-            "us": {
-              "amount": 4.0,
-              "unitShort": "servings",
-              "unitLong": "servings"
-            },
-            "metric": {
-              "amount": 4.0,
-              "unitShort": "servings",
-              "unitLong": "servings"
-            }
-          }
-        },
-        {
-          "id": 11282,
-          "aisle": "Produce",
-          "image": "brown-onion.png",
+          "id": 10019087,
+          "aisle": "Baking",
+          "image": "white-chocolate-chips.jpg",
           "consistency": "SOLID",
-          "name": "onions",
-          "nameClean": "onion",
-          "original": "2 onions, finely chopped",
-          "originalName": "onions, finely chopped",
-          "amount": 2.0,
-          "unit": "",
+          "name": "white chocolate chips",
+          "nameClean": "white chocolate chips",
+          "original": "1 cup good quality white chocolate chips",
+          "originalName": "good quality white chocolate chips",
+          "amount": 1,
+          "unit": "cup",
           "meta": [
-            "finely chopped"
+            "white"
           ],
           "measures": {
             "us": {
-              "amount": 2.0,
+              "amount": 1,
+              "unitShort": "cup",
+              "unitLong": "cup"
+            },
+            "metric": {
+              "amount": 236.588,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 1017,
+          "aisle": "Cheese",
+          "image": "cream-cheese.jpg",
+          "consistency": "SOLID",
+          "name": "cream cheese",
+          "nameClean": "cream cheese",
+          "original": "3 ounces eight packages ounces cream cheese",
+          "originalName": "eight packages ounces cream cheese",
+          "amount": 3,
+          "unit": "ounces",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 3,
+              "unitShort": "oz",
+              "unitLong": "ounces"
+            },
+            "metric": {
+              "amount": 85.049,
+              "unitShort": "g",
+              "unitLong": "grams"
+            }
+          }
+        },
+        {
+          "id": 19335,
+          "aisle": "Baking",
+          "image": "sugar-in-bowl.png",
+          "consistency": "SOLID",
+          "name": "sugar",
+          "nameClean": "sugar",
+          "original": "1/2 cup sugar",
+          "originalName": "sugar",
+          "amount": 0.5,
+          "unit": "cup",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 0.5,
+              "unitShort": "cups",
+              "unitLong": "cups"
+            },
+            "metric": {
+              "amount": 118.294,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 1123,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "egg.png",
+          "consistency": "SOLID",
+          "name": "eggs",
+          "nameClean": "egg",
+          "original": "3 eggs",
+          "originalName": "eggs",
+          "amount": 3,
+          "unit": "",
+          "meta": [],
+          "measures": {
+            "us": {
+              "amount": 3,
               "unitShort": "",
               "unitLong": ""
             },
             "metric": {
-              "amount": 2.0,
+              "amount": 3,
               "unitShort": "",
               "unitLong": ""
             }
           }
         },
         {
-          "id": 1012047,
-          "aisle": "Spices and Seasonings",
-          "image": "salt.jpg",
-          "consistency": "SOLID",
-          "name": "sea salt",
-          "nameClean": "coarse sea salt",
-          "original": "Sea salt",
-          "originalName": "Sea salt",
-          "amount": 4.0,
-          "unit": "servings",
+          "id": 2050,
+          "aisle": "Baking",
+          "image": "vanilla-extract.jpg",
+          "consistency": "LIQUID",
+          "name": "vanilla extract",
+          "nameClean": "vanilla extract",
+          "original": "3 teaspoons vanilla extract",
+          "originalName": "vanilla extract",
+          "amount": 3,
+          "unit": "teaspoons",
           "meta": [],
           "measures": {
             "us": {
-              "amount": 4.0,
-              "unitShort": "servings",
-              "unitLong": "servings"
+              "amount": 3,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
             },
             "metric": {
-              "amount": 4.0,
-              "unitShort": "servings",
-              "unitLong": "servings"
+              "amount": 3,
+              "unitShort": "tsps",
+              "unitLong": "teaspoons"
             }
           }
         },
         {
-          "id": 11887,
-          "aisle": "Pasta and Rice",
-          "image": "tomato-paste.jpg",
-          "consistency": "SOLID",
-          "name": "tomato paste",
-          "nameClean": "tomato paste",
-          "original": "2 Tbs tomato paste",
-          "originalName": "tomato paste",
-          "amount": 2.0,
-          "unit": "Tbs",
+          "id": 1001053,
+          "aisle": "Milk, Eggs, Other Dairy",
+          "image": "fluid-cream.jpg",
+          "consistency": "LIQUID",
+          "name": "whipping cream",
+          "nameClean": "whipping cream",
+          "original": "1 cup whipping cream",
+          "originalName": "whipping cream",
+          "amount": 1,
+          "unit": "cup",
           "meta": [],
           "measures": {
             "us": {
-              "amount": 2.0,
-              "unitShort": "Tbs",
-              "unitLong": "Tbs"
+              "amount": 1,
+              "unitShort": "cup",
+              "unitLong": "cup"
             },
             "metric": {
-              "amount": 2.0,
-              "unitShort": "Tbs",
-              "unitLong": "Tbs"
+              "amount": 236.588,
+              "unitShort": "ml",
+              "unitLong": "milliliters"
+            }
+          }
+        },
+        {
+          "id": 9302,
+          "aisle": "Produce",
+          "image": "raspberries.jpg",
+          "consistency": "SOLID",
+          "name": "raspberries",
+          "nameClean": "raspberries",
+          "original": "2 pints fresh raspberries",
+          "originalName": "fresh raspberries",
+          "amount": 2,
+          "unit": "pints",
+          "meta": [
+            "fresh"
+          ],
+          "measures": {
+            "us": {
+              "amount": 2,
+              "unitShort": "pts",
+              "unitLong": "pints"
+            },
+            "metric": {
+              "amount": 2,
+              "unitShort": "pts",
+              "unitLong": "pints"
             }
           }
         }
       ],
-      "id": 639606,
-      "title": "Classic Greek Moussaka",
+      "id": 665172,
+      "title": "White Chocolate Cheesecake With Raspberries",
       "readyInMinutes": 45,
-      "servings": 4,
-      "sourceUrl": "http://www.foodista.com/recipe/LPXBFBVS/classic-greek-moussaka",
-      "summary": "Classic Greek Moussaka might be just the <b>Mediterranean</b> recipe you are searching for. This recipe makes 4 servings with <b>841 calories</b>, <b>42g of protein</b>, and <b>52g of fat</b> each. For <b>$4.42 per serving</b>, this recipe <b>covers 43%</b> of your daily requirements of vitamins and minerals. It works well as a main course. This recipe is liked by 37 foodies and cooks. From preparation to the plate, this recipe takes around <b>45 minutes</b>. Head to the store and pick up ground allspice, egg plants, ground cinnamon, and a few other things to make it today. To use up the olive oil you could follow this main course with the <a href=\"https://spoonacular.com/recipes/sauteed-banana-granola-and-yogurt-parfait-624619\">Sauteed Banana, Granolan and Yogurt Parfait</a> as a dessert. All things considered, we decided this recipe <b>deserves a spoonacular score of 90%</b>. This score is tremendous. Try <a href=\"https://spoonacular.com/recipes/moussaka-dont-miss-out-on-this-greek-classic-if-you-have-never-tried-this-before-think-of-a-lasnaga-that-is-made-out-of-eggplant-601582\">Moussaka don’t miss out on this Greek classic, if you have never tried this before, think of a lasnaga that is made out of eggplant</a>, <a href=\"https://spoonacular.com/recipes/kittencals-greek-moussaka-103654\">Kittencal's Greek Moussaka</a>, and <a href=\"https://spoonacular.com/recipes/moussaka-greek-casserole-97648\">Moussaka - Greek Casserole</a> for similar recipes.",
-      "cuisines": [
-        "Mediterranean",
-        "European",
-        "Greek"
-      ],
-      "dishTypes": [
-        "lunch",
-        "main course",
-        "main dish",
-        "dinner"
-      ],
+      "servings": 16,
+      "sourceUrl": "https://www.foodista.com/recipe/3VJQ5HQW/white-chocolate-cheesecake-with-raspberries",
+      "image": "https://spoonacular.com/recipeImages/665172-556x370.jpg",
+      "imageType": "jpg",
+      "summary": "The recipe White Chocolate Cheesecake With Raspberries can be made <b>in around about 45 minutes</b>. This recipe makes 16 servings with <b>288 calories</b>, <b>4g of protein</b>, and <b>18g of fat</b> each. For <b>$1.4 per serving</b>, this recipe <b>covers 7%</b> of your daily requirements of vitamins and minerals. It is brought to you by Foodista. 24 people have made this recipe and would make it again. If you have graham wafer crumbs, whipping cream, butter, and a few other ingredients on hand, you can make it. Taking all factors into account, this recipe <b>earns a spoonacular score of 19%</b>, which is not so great. If you like this recipe, you might also like recipes such as <a href=\"https://spoonacular.com/recipes/chocolate-cheesecake-mousse-with-raspberries-519459\">Chocolate Cheesecake Mousse with Raspberries</a>, <a href=\"https://spoonacular.com/recipes/pistachio-roulade-with-raspberries-and-white-chocolate-1067810\">Pistachio Roulade with Raspberries and White Chocolate</a>, and <a href=\"https://spoonacular.com/recipes/white-chocolate-semifreddo-with-pistachios-and-raspberries-604579\">White Chocolate Semifreddo with Pistachios and Raspberries</a>.",
+      "cuisines": [],
+      "dishTypes": [],
       "diets": [],
       "occasions": [],
-      "instructions": "<ol><li>Sprinkle the egg plant slices with salt and let them stand for 45 minutes. Then wash thoroughly to remove excess salt.</li><li>Thinly brush each slice with olive oil and bake in the preheated grill pan for several minutes on each side. Set aside. Repeat until all slices are grilled.</li><li>For the meat sauce lightly saute the onions in olive oil until tender.</li><li>Add ground beef and saute, stirring frequently to break up the clumps of meat, until the meat is no longer pink.</li><li>Stir in tomatoes, garlic, cinnamon, allspice, salt and pepper and simmer briefly on low heat.</li><li>Add in tomato paste and a little water if the sauce is to thick. Remove from heat and set aside.</li><li>For the bchamel sauce add flour to the melted butter, stirring constantly. When the mixture is evenly thick, gradually whisk in warm milk.  Gently bring to the boil, then remove from heat, season with pepper and nutmeg. Whisk in (vigorously) the egg yolks. Set aside.</li><li>Thinly coat with olive oil a suitable ovenproof baking dish, sprinkle the bottom with homemade bread crumbs.</li><li>Place a layer of egg plant, cover with some meat sauce and feta cheese and repeat this until the pan is almost full. Finish with a layer of feta cheese.</li><li>Top with bchamel sauce.</li><li>Cover with tin foil and bake in a preheated oven at 180C for 1 hour.</li><li>Remove moussaka from the oven and let it set at room temperature 45 minutes before serving.</li></ol>",
+      "instructions": "To make the crumb crust\nIn a small bowl combine the graham crumbs, sugar and melted butter.\nPress into the bottom of a lightly greased springform pan. (Grease bottom only! I also like to line the bottom with parchment paper for easy release of the cheesecake from the pan when it has cooled.)\nTo prepare the cheesecake\nIn a double boiler, melt together the  cup whipping cream and 1 cup pf white chocolate chips. You want this just at the melting point, so be careful not to overheat it. Let it cool to lukewarm if necessary after melting. Set aside to cool while you prepare the rest of the cheesecake batter.\nCream together the cream cheese and  cup sugar for a few minutes, scraping the bowl often.\nAdd the eggs, one at a time, beating well after each addition.\nStir in the vanilla extract and melted white chocolate.\nFinally blend in the 1 cup of whipping cream until smooth.\nPour over the prepared base and bake in a bain marie (See Note) at 325 degrees F for 60 to 70 minutes. The cheesecake may be beginning to lightly brown at the edges but a cheesecake does not need to brown at all to be fully baked. The surface of the cheesecake should lose any shine when the cake is properly baked. It can still be slightly wobbly just at the center at this point.\nRemove the cake from the oven and run a sharp knife completely around the edge of the pan. This will allow for the cheesecake to shrink as it cools and hopefully not crack (but who cares if it does? I am never bothered by a crack or two in the surface)\nAllow the cheesecake to cool thoroughly on a wire rack at room temperature. (Do not put a hot cheesecake into the fridge to cool quickly, this may result in an under baked cheesecake because the residual heat actually continues to set the cheesecake after it comes out of the oven).\nTo finish the cheesecake\nWhen completely cool cover the top with fresh raspberries and garnish with melted white chocolate if desired.\nChill completely in the refrigerator until ready to serve.",
       "analyzedInstructions": [
         {
           "name": "",
           "steps": [
             {
               "number": 1,
-              "step": "Sprinkle the egg plant slices with salt and let them stand for 45 minutes. Then wash thoroughly to remove excess salt.Thinly brush each slice with olive oil and bake in the preheated grill pan for several minutes on each side. Set aside. Repeat until all slices are grilled.For the meat sauce lightly saute the onions in olive oil until tender.",
+              "step": "To make the crumb crust",
               "ingredients": [
                 {
-                  "id": 11209,
-                  "name": "eggplant",
-                  "localizedName": "eggplant",
-                  "image": "eggplant.png"
-                },
-                {
-                  "id": 4053,
-                  "name": "olive oil",
-                  "localizedName": "olive oil",
-                  "image": "olive-oil.jpg"
-                },
-                {
-                  "id": 11282,
-                  "name": "onion",
-                  "localizedName": "onion",
-                  "image": "brown-onion.png"
-                },
-                {
                   "id": 0,
-                  "name": "sauce",
-                  "localizedName": "sauce",
+                  "name": "crust",
+                  "localizedName": "crust",
                   "image": ""
-                },
-                {
-                  "id": 1065062,
-                  "name": "meat",
-                  "localizedName": "meat",
-                  "image": "whole-chicken.jpg"
-                },
-                {
-                  "id": 2047,
-                  "name": "salt",
-                  "localizedName": "salt",
-                  "image": "salt.jpg"
                 }
               ],
-              "equipment": [
-                {
-                  "id": 404648,
-                  "name": "grill pan",
-                  "localizedName": "grill pan",
-                  "image": "grill-pan.jpg"
-                },
-                {
-                  "id": 404784,
-                  "name": "oven",
-                  "localizedName": "oven",
-                  "image": "oven.jpg"
-                }
-              ],
-              "length": {
-                "number": 45,
-                "unit": "minutes"
-              }
+              "equipment": []
             },
             {
               "number": 2,
-              "step": "Add ground beef and saute, stirring frequently to break up the clumps of meat, until the meat is no longer pink.Stir in tomatoes, garlic, cinnamon, allspice, salt and pepper and simmer briefly on low heat.",
-              "ingredients": [
-                {
-                  "id": 1102047,
-                  "name": "salt and pepper",
-                  "localizedName": "salt and pepper",
-                  "image": "salt-and-pepper.jpg"
-                },
-                {
-                  "id": 10023572,
-                  "name": "ground beef",
-                  "localizedName": "ground beef",
-                  "image": "fresh-ground-beef.jpg"
-                },
-                {
-                  "id": 2001,
-                  "name": "allspice",
-                  "localizedName": "allspice",
-                  "image": "allspice-ground.jpg"
-                },
-                {
-                  "id": 2010,
-                  "name": "cinnamon",
-                  "localizedName": "cinnamon",
-                  "image": "cinnamon.jpg"
-                },
-                {
-                  "id": 11529,
-                  "name": "tomato",
-                  "localizedName": "tomato",
-                  "image": "tomato.png"
-                },
-                {
-                  "id": 11215,
-                  "name": "garlic",
-                  "localizedName": "garlic",
-                  "image": "garlic.png"
-                },
-                {
-                  "id": 1065062,
-                  "name": "meat",
-                  "localizedName": "meat",
-                  "image": "whole-chicken.jpg"
-                }
-              ],
-              "equipment": []
-            },
-            {
-              "number": 3,
-              "step": "Add in tomato paste and a little water if the sauce is to thick.",
-              "ingredients": [
-                {
-                  "id": 11887,
-                  "name": "tomato paste",
-                  "localizedName": "tomato paste",
-                  "image": "tomato-paste.jpg"
-                },
-                {
-                  "id": 0,
-                  "name": "sauce",
-                  "localizedName": "sauce",
-                  "image": ""
-                },
-                {
-                  "id": 14412,
-                  "name": "water",
-                  "localizedName": "water",
-                  "image": "water.png"
-                }
-              ],
-              "equipment": []
-            },
-            {
-              "number": 4,
-              "step": "Remove from heat and set aside.For the bchamel sauce add flour to the melted butter, stirring constantly. When the mixture is evenly thick, gradually whisk in warm milk.  Gently bring to the boil, then remove from heat, season with pepper and nutmeg.",
+              "step": "In a small bowl combine the graham crumbs, sugar and melted butter.",
               "ingredients": [
                 {
                   "id": 1001,
@@ -708,134 +370,182 @@ export default class Result extends React.Component {
                   "image": "butter-sliced.jpg"
                 },
                 {
-                  "id": 2025,
-                  "name": "nutmeg",
-                  "localizedName": "nutmeg",
-                  "image": "ground-nutmeg.jpg"
-                },
-                {
-                  "id": 1002030,
-                  "name": "pepper",
-                  "localizedName": "pepper",
-                  "image": "pepper.jpg"
-                },
-                {
-                  "id": 20081,
-                  "name": "all purpose flour",
-                  "localizedName": "all purpose flour",
-                  "image": "flour.png"
-                },
-                {
-                  "id": 0,
-                  "name": "sauce",
-                  "localizedName": "sauce",
-                  "image": ""
-                },
-                {
-                  "id": 1077,
-                  "name": "milk",
-                  "localizedName": "milk",
-                  "image": "milk.png"
+                  "id": 19335,
+                  "name": "sugar",
+                  "localizedName": "sugar",
+                  "image": "sugar-in-bowl.png"
                 }
               ],
               "equipment": [
                 {
-                  "id": 404661,
-                  "name": "whisk",
-                  "localizedName": "whisk",
-                  "image": "whisk.png"
+                  "id": 404783,
+                  "name": "bowl",
+                  "localizedName": "bowl",
+                  "image": "bowl.jpg"
                 }
               ]
             },
             {
+              "number": 3,
+              "step": "Press into the bottom of a lightly greased springform pan. (Grease bottom only! I also like to line the bottom with parchment paper for easy release of the cheesecake from the pan when it has cooled.)",
+              "ingredients": [],
+              "equipment": [
+                {
+                  "id": 404770,
+                  "name": "baking paper",
+                  "localizedName": "baking paper",
+                  "image": "baking-paper.jpg"
+                },
+                {
+                  "id": 404650,
+                  "name": "springform pan",
+                  "localizedName": "springform pan",
+                  "image": "cake-pan.png"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "step": "To prepare the cheesecake",
+              "ingredients": [],
+              "equipment": []
+            },
+            {
               "number": 5,
-              "step": "Whisk in (vigorously) the egg yolks. Set aside.Thinly coat with olive oil a suitable ovenproof baking dish, sprinkle the bottom with homemade bread crumbs.",
+              "step": "In a double boiler, melt together the  cup whipping cream and 1 cup pf white chocolate chips. You want this just at the melting point, so be careful not to overheat it.",
               "ingredients": [
                 {
-                  "id": 18079,
-                  "name": "breadcrumbs",
-                  "localizedName": "breadcrumbs",
-                  "image": "breadcrumbs.jpg"
+                  "id": 10019087,
+                  "name": "white chocolate chips",
+                  "localizedName": "white chocolate chips",
+                  "image": "white-chocolate-chips.jpg"
                 },
                 {
-                  "id": 1125,
-                  "name": "egg yolk",
-                  "localizedName": "egg yolk",
-                  "image": "egg-yolk.jpg"
-                },
-                {
-                  "id": 4053,
-                  "name": "olive oil",
-                  "localizedName": "olive oil",
-                  "image": "olive-oil.jpg"
+                  "id": 1001053,
+                  "name": "whipping cream",
+                  "localizedName": "whipping cream",
+                  "image": "fluid-cream.jpg"
                 }
               ],
               "equipment": [
                 {
-                  "id": 404646,
-                  "name": "baking pan",
-                  "localizedName": "baking pan",
-                  "image": "roasting-pan.jpg"
-                },
-                {
-                  "id": 404661,
-                  "name": "whisk",
-                  "localizedName": "whisk",
-                  "image": "whisk.png"
+                  "id": 404699,
+                  "name": "double boiler",
+                  "localizedName": "double boiler",
+                  "image": "double-boiler.jpg"
                 }
               ]
             },
             {
               "number": 6,
-              "step": "Place a layer of egg plant, cover with some meat sauce and feta cheese and repeat this until the pan is almost full. Finish with a layer of feta cheese.Top with bchamel sauce.Cover with tin foil and bake in a preheated oven at 180C for 1 hour.",
+              "step": "Let it cool to lukewarm if necessary after melting. Set aside to cool while you prepare the rest of the cheesecake batter.",
+              "ingredients": [],
+              "equipment": []
+            },
+            {
+              "number": 7,
+              "step": "Cream together the cream cheese and  cup sugar for a few minutes, scraping the bowl often.",
               "ingredients": [
                 {
-                  "id": 1019,
-                  "name": "feta cheese",
-                  "localizedName": "feta cheese",
-                  "image": "feta.png"
+                  "id": 1017,
+                  "name": "cream cheese",
+                  "localizedName": "cream cheese",
+                  "image": "cream-cheese.jpg"
                 },
                 {
-                  "id": 11209,
-                  "name": "eggplant",
-                  "localizedName": "eggplant",
-                  "image": "eggplant.png"
+                  "id": 1053,
+                  "name": "cream",
+                  "localizedName": "cream",
+                  "image": "fluid-cream.jpg"
                 },
                 {
-                  "id": 0,
-                  "name": "sauce",
-                  "localizedName": "sauce",
-                  "image": ""
-                },
-                {
-                  "id": 1065062,
-                  "name": "meat",
-                  "localizedName": "meat",
-                  "image": "whole-chicken.jpg"
+                  "id": 19335,
+                  "name": "sugar",
+                  "localizedName": "sugar",
+                  "image": "sugar-in-bowl.png"
                 }
               ],
               "equipment": [
+                {
+                  "id": 404783,
+                  "name": "bowl",
+                  "localizedName": "bowl",
+                  "image": "bowl.jpg"
+                }
+              ]
+            },
+            {
+              "number": 8,
+              "step": "Add the eggs, one at a time, beating well after each addition.",
+              "ingredients": [
+                {
+                  "id": 1123,
+                  "name": "egg",
+                  "localizedName": "egg",
+                  "image": "egg.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 9,
+              "step": "Stir in the vanilla extract and melted white chocolate.",
+              "ingredients": [
+                {
+                  "id": 2050,
+                  "name": "vanilla extract",
+                  "localizedName": "vanilla extract",
+                  "image": "vanilla-extract.jpg"
+                },
+                {
+                  "id": 19087,
+                  "name": "white chocolate",
+                  "localizedName": "white chocolate",
+                  "image": "white-chocolate.jpg"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 10,
+              "step": "Finally blend in the 1 cup of whipping cream until smooth.",
+              "ingredients": [
+                {
+                  "id": 1001053,
+                  "name": "whipping cream",
+                  "localizedName": "whipping cream",
+                  "image": "fluid-cream.jpg"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 11,
+              "step": "Pour over the prepared base and bake in a bain marie (See Note) at 325 degrees F for 60 to 70 minutes. The cheesecake may be beginning to lightly brown at the edges but a cheesecake does not need to brown at all to be fully baked. The surface of the cheesecake should lose any shine when the cake is properly baked. It can still be slightly wobbly just at the center at this point.",
+              "ingredients": [
+                {
+                  "id": 0,
+                  "name": "base",
+                  "localizedName": "base",
+                  "image": ""
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404699,
+                  "name": "double boiler",
+                  "localizedName": "double boiler",
+                  "image": "double-boiler.jpg"
+                },
                 {
                   "id": 404784,
                   "name": "oven",
                   "localizedName": "oven",
                   "image": "oven.jpg",
                   "temperature": {
-                    "number": 180.0,
-                    "unit": "Celsius"
+                    "number": 325,
+                    "unit": "Fahrenheit"
                   }
-                },
-                {
-                  "id": 404765,
-                  "name": "aluminum foil",
-                  "localizedName": "aluminum foil",
-                  "image": "aluminum-foil.png"
-                },
-                {
-                  "id": 404645,
-                  "name": "frying pan",
-                  "localizedName": "frying pan",
-                  "image": "pan.png"
                 }
               ],
               "length": {
@@ -844,27 +554,284 @@ export default class Result extends React.Component {
               }
             },
             {
-              "number": 7,
-              "step": "Remove moussaka from the oven and let it set at room temperature 45 minutes before serving.",
+              "number": 12,
+              "step": "Remove the cake from the oven and run a sharp knife completely around the edge of the pan. This will allow for the cheesecake to shrink as it cools and hopefully not crack (but who cares if it does? I am never bothered by a crack or two in the surface)",
               "ingredients": [],
               "equipment": [
+                {
+                  "id": 404745,
+                  "name": "knife",
+                  "localizedName": "knife",
+                  "image": "chefs-knife.jpg"
+                },
+                {
+                  "id": 404784,
+                  "name": "oven",
+                  "localizedName": "oven",
+                  "image": "oven.jpg"
+                },
+                {
+                  "id": 404645,
+                  "name": "frying pan",
+                  "localizedName": "frying pan",
+                  "image": "pan.png"
+                }
+              ]
+            },
+            {
+              "number": 13,
+              "step": "Allow the cheesecake to cool thoroughly on a wire rack at room temperature. (Do not put a hot cheesecake into the fridge to cool quickly, this may result in an under baked cheesecake because the residual heat actually continues to set the cheesecake after it comes out of the oven).",
+              "ingredients": [],
+              "equipment": [
+                {
+                  "id": 405900,
+                  "name": "wire rack",
+                  "localizedName": "wire rack",
+                  "image": "wire-rack.jpg"
+                },
                 {
                   "id": 404784,
                   "name": "oven",
                   "localizedName": "oven",
                   "image": "oven.jpg"
                 }
+              ]
+            },
+            {
+              "number": 14,
+              "step": "To finish the cheesecake",
+              "ingredients": [],
+              "equipment": []
+            },
+            {
+              "number": 15,
+              "step": "When completely cool cover the top with fresh raspberries and garnish with melted white chocolate if desired.",
+              "ingredients": [
+                {
+                  "id": 19087,
+                  "name": "white chocolate",
+                  "localizedName": "white chocolate",
+                  "image": "white-chocolate.jpg"
+                },
+                {
+                  "id": 9302,
+                  "name": "raspberries",
+                  "localizedName": "raspberries",
+                  "image": "raspberries.jpg"
+                }
               ],
-              "length": {
-                "number": 45,
-                "unit": "minutes"
-              }
+              "equipment": []
+            },
+            {
+              "number": 16,
+              "step": "Chill completely in the refrigerator until ready to serve.",
+              "ingredients": [],
+              "equipment": []
             }
           ]
         }
       ],
       "originalId": null,
-      "spoonacularSourceUrl": "https://spoonacular.com/classic-greek-moussaka-639606"
+      "spoonacularSourceUrl": "https://spoonacular.com/white-chocolate-cheesecake-with-raspberries-665172",
+      "expanded": false,
+      "nutrition_stats": {
+        "calories": "288k",
+        "carbs": "28g",
+        "fat": "18g",
+        "protein": "3g",
+        "bad": [
+          {
+            "title": "Calories",
+            "amount": "288k",
+            "indented": false,
+            "percentOfDailyNeeds": 14.42
+          },
+          {
+            "title": "Fat",
+            "amount": "18g",
+            "indented": false,
+            "percentOfDailyNeeds": 28.42
+          },
+          {
+            "title": "Saturated Fat",
+            "amount": "10g",
+            "indented": true,
+            "percentOfDailyNeeds": 66.16
+          },
+          {
+            "title": "Carbohydrates",
+            "amount": "28g",
+            "indented": false,
+            "percentOfDailyNeeds": 9.5
+          },
+          {
+            "title": "Sugar",
+            "amount": "19g",
+            "indented": true,
+            "percentOfDailyNeeds": 21.85
+          },
+          {
+            "title": "Cholesterol",
+            "amount": "76mg",
+            "indented": false,
+            "percentOfDailyNeeds": 25.41
+          },
+          {
+            "title": "Sodium",
+            "amount": "127mg",
+            "indented": false,
+            "percentOfDailyNeeds": 5.53
+          },
+          {
+            "title": "Alcohol",
+            "amount": "0.26g",
+            "indented": false,
+            "percentOfDailyNeeds": 1.43
+          }
+        ],
+        "good": [
+          {
+            "title": "Protein",
+            "amount": "3g",
+            "indented": false,
+            "percentOfDailyNeeds": 7.32
+          },
+          {
+            "title": "Manganese",
+            "amount": "0.4mg",
+            "indented": false,
+            "percentOfDailyNeeds": 20.12
+          },
+          {
+            "title": "Vitamin C",
+            "amount": "15mg",
+            "indented": false,
+            "percentOfDailyNeeds": 19
+          },
+          {
+            "title": "Fiber",
+            "amount": "4g",
+            "indented": false,
+            "percentOfDailyNeeds": 16.42
+          },
+          {
+            "title": "Vitamin A",
+            "amount": "548IU",
+            "indented": false,
+            "percentOfDailyNeeds": 10.97
+          },
+          {
+            "title": "Phosphorus",
+            "amount": "86mg",
+            "indented": false,
+            "percentOfDailyNeeds": 8.65
+          },
+          {
+            "title": "Vitamin B2",
+            "amount": "0.14mg",
+            "indented": false,
+            "percentOfDailyNeeds": 8.3
+          },
+          {
+            "title": "Vitamin E",
+            "amount": "1mg",
+            "indented": false,
+            "percentOfDailyNeeds": 6.96
+          },
+          {
+            "title": "Calcium",
+            "amount": "66mg",
+            "indented": false,
+            "percentOfDailyNeeds": 6.67
+          },
+          {
+            "title": "Vitamin K",
+            "amount": "6µg",
+            "indented": false,
+            "percentOfDailyNeeds": 6.46
+          },
+          {
+            "title": "Folate",
+            "amount": "21µg",
+            "indented": false,
+            "percentOfDailyNeeds": 5.46
+          },
+          {
+            "title": "Magnesium",
+            "amount": "21mg",
+            "indented": false,
+            "percentOfDailyNeeds": 5.38
+          },
+          {
+            "title": "Iron",
+            "amount": "0.9mg",
+            "indented": false,
+            "percentOfDailyNeeds": 5
+          },
+          {
+            "title": "Selenium",
+            "amount": "3µg",
+            "indented": false,
+            "percentOfDailyNeeds": 4.97
+          },
+          {
+            "title": "Potassium",
+            "amount": "169mg",
+            "indented": false,
+            "percentOfDailyNeeds": 4.85
+          },
+          {
+            "title": "Vitamin B5",
+            "amount": "0.48mg",
+            "indented": false,
+            "percentOfDailyNeeds": 4.76
+          },
+          {
+            "title": "Zinc",
+            "amount": "0.65mg",
+            "indented": false,
+            "percentOfDailyNeeds": 4.35
+          },
+          {
+            "title": "Vitamin B3",
+            "amount": "0.73mg",
+            "indented": false,
+            "percentOfDailyNeeds": 3.64
+          },
+          {
+            "title": "Copper",
+            "amount": "0.07mg",
+            "indented": false,
+            "percentOfDailyNeeds": 3.57
+          },
+          {
+            "title": "Vitamin B1",
+            "amount": "0.05mg",
+            "indented": false,
+            "percentOfDailyNeeds": 3.4
+          },
+          {
+            "title": "Vitamin B6",
+            "amount": "0.07mg",
+            "indented": false,
+            "percentOfDailyNeeds": 3.36
+          },
+          {
+            "title": "Vitamin B12",
+            "amount": "0.19µg",
+            "indented": false,
+            "percentOfDailyNeeds": 3.22
+          },
+          {
+            "title": "Vitamin D",
+            "amount": "0.41µg",
+            "indented": false,
+            "percentOfDailyNeeds": 2.71
+          }
+        ],
+        "expires": 1634377170415,
+        "isStale": true
+      }
     }],
     //****** ApiKey ******/
     key: ["71572cc55469424d9b3c4f90dddce7a4",
@@ -874,7 +841,7 @@ export default class Result extends React.Component {
       "bc3abec2a0b749d285f7b43711c11c12",
       "8b75ca578a6942c6b2b061a122b72380"
     ],
-    key_index: 0
+    key_index: 1
   }
 
   handleExpandClick = (item_index) => {
@@ -890,7 +857,7 @@ export default class Result extends React.Component {
       url: 'https://api.spoonacular.com/recipes/random',
       params: {
         apiKey: this.state.key[this.state.key_index],
-        number: 10
+        number: 20
       }
     }).then(response => {
       return response.data.recipes
@@ -928,6 +895,29 @@ export default class Result extends React.Component {
           key_index: this.state.key_index + 1
         }, () => {
           this.queryRecipeTaste()
+        })
+      }
+    })
+  }
+
+  queryRecipeNutrition (recipeID) {
+    return axios({
+      url: "https://api.spoonacular.com/recipes/" + recipeID + "/nutritionWidget.json",
+      params: {
+        apiKey: this.state.key[this.state.key_index]
+      }
+    }).then(response => {
+      return response.data
+    }).catch((error) => {
+      console.log(error)
+      if (this.state.key.length <= this.state.key_index) {
+        console.log("Sorry, daily points of all Api Keys are used up. No more search!")
+      }
+      else {
+        this.setState({
+          key_index: this.state.key_index + 1
+        }, () => {
+          this.queryRecipeNutrition()
         })
       }
     })
@@ -982,13 +972,14 @@ export default class Result extends React.Component {
   async getApplicableRecipes (queryTaste) {
     //Number of recipes returned.
     const recipes = await this.queryRecipes()
-    console.log(recipes)
     for (let x = 0; x < recipes.length; x++) {
       recipes[x].expanded = false
       const taste_stats = await this.queryRecipeTaste(recipes[x].id)
-      console.log(taste_stats)
       if (queryTaste.includes("sweet")) {
         if (taste_stats.sweetness >= 50) {
+          const nutrition_stats = await this.queryRecipeNutrition(recipes[x].id)
+          recipes[x].nutrition_stats = nutrition_stats
+          console.log(recipes[x])
           this.setState({
             recipe_list: [...this.state.recipe_list, recipes[x]]
           })
@@ -997,6 +988,8 @@ export default class Result extends React.Component {
       }
       if (queryTaste.includes("salty")) {
         if (taste_stats.saltiness >= 30) {
+          const nutrition_stats = await this.queryRecipeNutrition(recipes[x].id)
+          recipes[x].nutrition_stats = nutrition_stats
           this.setState({
             recipe_list: [...this.state.recipe_list, recipes[x]]
           })
@@ -1006,6 +999,8 @@ export default class Result extends React.Component {
 
       if (queryTaste.includes("sour")) {
         if (taste_stats.sourness >= 20) {
+          const nutrition_stats = await this.queryRecipeNutrition(recipes[x].id)
+          recipes[x].nutrition_stats = nutrition_stats
           this.setState({
             recipe_list: [...this.state.recipe_list, recipes[x]]
           })
@@ -1015,6 +1010,8 @@ export default class Result extends React.Component {
 
       if (queryTaste.includes("bitter")) {
         if (taste_stats.bitterness >= 20) {
+          const nutrition_stats = await this.queryRecipeNutrition(recipes[x].id)
+          recipes[x].nutrition_stats = nutrition_stats
           this.setState({
             recipe_list: [...this.state.recipe_list, recipes[x]]
           })
@@ -1024,6 +1021,8 @@ export default class Result extends React.Component {
 
       if (queryTaste.includes("savory")) {
         if (taste_stats.savoriness >= 30) {
+          const nutrition_stats = await this.queryRecipeNutrition(recipes[x].id)
+          recipes[x].nutrition_stats = nutrition_stats
           this.setState({
             recipe_list: [...this.state.recipe_list, recipes[x]]
           })
@@ -1031,6 +1030,7 @@ export default class Result extends React.Component {
         }
       }
     }
+    console.log(this.state.recipe_list)
   }
 
   //Monitor change of search item and call getApplicableRecipes if there is a change.
@@ -1048,6 +1048,7 @@ export default class Result extends React.Component {
       <div className="recipe_list w">
         <ul>
           {this.state.recipe_list.map((item, index) => (
+<<<<<<< HEAD
             <li key={item.id} className="recipe">
               {/* TODO: add margin under recipes so they spread out from one another */}
               <Card>
@@ -1069,34 +1070,112 @@ export default class Result extends React.Component {
                   <div className="like-button">
                     {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
                     {/* <Button
+=======
+            ((this.props.diet_option === "Gain muscle"
+              && item.nutrition_stats.good[0].percentOfDailyNeeds >= 20)
+              ||
+              (this.props.diet_option === "Lower body fat rate"
+                && item.nutrition_stats.bad[3].percentOfDailyNeeds <= 30)
+              ||
+              (this.props.diet_option === "None" || this.props.diet_option === "Stay in shape")
+            ) ?
+              <li key={item.id} className="recipe">
+                <Card>
+                  <h1 className="recipe_title">{item.title}</h1>
+                  {/* <div>{item.extendedIngredients}</div> */}
+                  <div className="recipe_content clearfix">
+                    <div className="recipe_img">
+                      <img src={item.image} />
+                    </div>
+                    <div className="recipe_ingredient_list">
+                      <h2>Ingredients</h2>
+                      <ul>
+                        {item.extendedIngredients.map((ingredient, index) => (
+                          <li className="ingredient" key={index}>{ingredient.name}</li>
+                        )
+                        )}
+                      </ul>
+                    </div>
+                    <div className="like-button">
+                      {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
+                      {/* <Button
+>>>>>>> c449f40bd8743c14c86eb81cef65d135b12ff8c1
                       onClick={this.saveRecipe(null, item.id)} >
                       <FavoriteIcon />
                     </Button> */}
+                    </div>
                   </div>
-                </div>
-                <CardActions disableSpacing>
-                  <ExpandMore
-                    expand={item.expanded}
-                    onClick={() => { this.handleExpandClick(index) }}
-                    aria-expanded={item.expanded}
-                    aria-label="show more"
-                  >
-                    <ExpandMoreIcon />
-                  </ExpandMore>
-                </CardActions>
-                <Collapse in={item.expanded} timeout="auto" unmountOnExit>
-                  <h2 style={{ marginLeft: "30px" }}>Instructions</h2>
-                  <div className={"instructions"} dangerouslySetInnerHTML={
-                    {
-                      __html: item.instructions
-                    }
-                  }></div>
-                </Collapse>
-              </Card>
-            </li>
+                  <CardActions disableSpacing>
+                    <ExpandMore
+                      expand={item.expanded}
+                      onClick={() => { this.handleExpandClick(index) }}
+                      aria-expanded={item.expanded}
+                      aria-label="show more"
+                    >
+                      <ExpandMoreIcon />
+                    </ExpandMore>
+                  </CardActions>
+                  <Collapse in={item.expanded} timeout="auto" unmountOnExit>
+                    <h2 style={{ marginLeft: "30px" }}>Instructions</h2>
+                    <div className={"instructions"}
+                      dangerouslySetInnerHTML={
+                        {
+                          __html: item.instructions
+                        }
+                      }></div>
+                    <h2 style={{ marginLeft: "30px" }}>Nutrition</h2>
+                    <div className="nutrition">
+                      {item.nutrition_stats.bad[0].percentOfDailyNeeds >= 20 ?
+                        <div className="high_nutrition">High Calories:&nbsp;
+                          {item.nutrition_stats.bad[0].percentOfDailyNeeds}
+                          (Percent of Daily Needs)
+                        </div>
+                        : <div className='low_nutrition'>Low Calories:&nbsp;
+                          {item.nutrition_stats.bad[0].percentOfDailyNeeds}
+                          (Percent of Daily Needs)
+                        </div>
+                      }
+                      {item.nutrition_stats.bad[1].percentOfDailyNeeds
+                        + item.nutrition_stats.bad[2].percentOfDailyNeeds >= 15 ?
+                        <div className="high_nutrition">High Fat:&nbsp;
+                          {item.nutrition_stats.bad[1].percentOfDailyNeeds
+                            + item.nutrition_stats.bad[2].percentOfDailyNeeds}
+                          (Percent of Daily Needs)
+                        </div>
+                        : <div className="low_nutrition">Low Fat:&nbsp;
+                          {item.nutrition_stats.bad[1].percentOfDailyNeeds
+                            + item.nutrition_stats.bad[2].percentOfDailyNeeds}
+                          (Percent of Daily Needs)
+                        </div>
+                      }
+                      {item.nutrition_stats.bad[3].percentOfDailyNeeds >= 30 ?
+                        <div className="high_nutrition">High Carbohydrates:&nbsp;
+                          {item.nutrition_stats.bad[3].percentOfDailyNeeds}
+                          (Percent of Daily Needs)
+                        </div>
+                        : <div className="low_nutrition">Low Carbohydrates:&nbsp;
+                          {item.nutrition_stats.bad[3].percentOfDailyNeeds}
+                          (Percent of Daily Needs)
+                        </div>
+                      }
+                      {item.nutrition_stats.good[0].percentOfDailyNeeds >= 20 ?
+                        <div className="low_nutrition">High Protein:&nbsp;
+                          {item.nutrition_stats.good[0].percentOfDailyNeeds}
+                          (Percent of Daily Needs)
+                        </div>
+                        : <div className="high_nutrition">Low Protein:&nbsp;
+                          {item.nutrition_stats.good[0].percentOfDailyNeeds}
+                          (Percent of Daily Needs)
+                        </div>
+                      }
+                    </div>
+                  </Collapse>
+                </Card>
+              </li>
+              :
+              null
           )
           )}
-
         </ul>
       </div >
     )
