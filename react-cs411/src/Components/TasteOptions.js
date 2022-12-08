@@ -2,7 +2,7 @@ import React from "react"
 import "../css/TasteOptions.css"
 
 const TasteOptions = () => {
-    return(
+    return (
         <div className="container">
             <div className="options-bar">
                 <div className="options">

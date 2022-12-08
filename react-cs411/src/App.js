@@ -1,11 +1,8 @@
 import React from "react"
-import axios from 'axios'
-import { v4 as uuid } from 'uuid'
 import "./css/base.css"
 import "./css/App.css"
 import TasteOptions from "./Components/TasteOptions";
-import FavRecipes from "./Components/FavRecipes";
-import HowToUse from "./Components/HowToUse";
+import FavRecipes from "./Components/FavRecipes"
 import { Button, Card, TextField } from "@mui/material"
 import { textTransform } from "@mui/system"
 import FavoriteIcon from '@mui/icons-material/Favorite'
@@ -77,10 +74,6 @@ class Search extends React.Component {
             size="medium"
           >Search!
           </Button>
-        </div>
-
-        <div className="site-instructions">
-          <HowToUse />
         </div>
       </div>
     )
@@ -272,12 +265,12 @@ class Result extends React.Component {
 
 class App extends React.Component {
   state = {
-    search_item: ""
+    parsed_search_item: []
   }
 
   getSearchItem = (item) => {
     this.setState({
-      search_item: item
+      parsed_search_item: item
     })
   }
 
@@ -286,7 +279,7 @@ class App extends React.Component {
       <>
         <Header />
         <Search getSearchItem={this.getSearchItem} />
-        <Result search_item={this.state.search_item} />
+        <Result parsed_search_item={this.state.parsed_search_item} />
       </>
     )
   }

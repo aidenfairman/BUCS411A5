@@ -1,19 +1,18 @@
-.options-bar{
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 1200px;
-    height: 50px;
-    /* padding-right: 50px; */
-    word-spacing: 100px;
-    padding-left: 20px;
-    /* background-color:#00D7FF;
+.options-bar {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 1200px;
+  height: 50px;
+  /* padding-right: 50px; */
+  word-spacing: 100px;
+  padding-left: 20px;
+  /* background-color:#00D7FF;
     border: 5px solid #0096FF; */
 }
-.options{
-    color: #2accf9;
-    font-size: 22px;
-    font-weight: bold;
-    padding-right: 50px;
+.options {
+  color: #2accf9;
+  font-size: 22px;
+  font-weight: bold;
+  padding-right: 50px;
 }
- 

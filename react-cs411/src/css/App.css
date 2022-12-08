@@ -9,7 +9,7 @@ header {
 }
 
 a {
-  color:rgb(245, 242, 242);
+  color: rgb(245, 242, 242);
 }
 
 header .w .login {
@@ -31,13 +31,13 @@ header .w .login {
   line-height: 40px;
 }
 
-.logo{
+.logo {
   color: #57a6f8;
   padding-bottom: 20px;
   margin-bottom: 50px;
   padding-right: 20px;
   box-shadow: 10px 5px 5px rgb(68, 155, 222);
-  border:2px solid rgb(52, 172, 236);
+  border: 2px solid rgb(52, 172, 236);
   border-radius: 66px;
 }
 
@@ -87,13 +87,20 @@ header .w .login {
 
 .recipe_list .recipe .recipe_content .recipe_ingredient_list {
   float: left;
-  margin-left: 200px;
+  margin-left: 150px;
 }
 
 .recipe_list .recipe .recipe_content .recipe_ingredient_list .ingredient {
   font-size: 14px;
 }
 
-.like-button{
-  float:right;
+.like-button {
+  float: right;
+}
+
+.instructions {
+  margin: 30px auto;
+  width: 734px;
+  line-height: 20px;
+  font-size: 14px;
 }
