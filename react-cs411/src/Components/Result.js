@@ -7,6 +7,9 @@ import CardActions from '@mui/material/CardActions'
 import IconButton, { IconButtonProps } from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
 import { spacing } from '@mui/system'
+import { useState } from 'react'
+// import { useState } from 'react';
+import FavButton from "./FavButton";
 
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -925,7 +928,7 @@ export default class Result extends React.Component {
 
   // Call Liked Recipes Api when to allow user to save a recipe
   saveRecipe (userID, recipeID) {
-    return axios({
+    return axios.post({
       url: 'http://localhost:8090/api/likedRecipe/addLikeRecipe',
       params: {
         userId: null, //null temporarily
@@ -966,7 +969,6 @@ export default class Result extends React.Component {
       console.log(error)
     })
   }
-
 
   //Generate a list of recipes .
   async getApplicableRecipes (queryTaste) {
@@ -1068,11 +1070,8 @@ export default class Result extends React.Component {
                       </ul>
                     </div>
                     <div className="like-button">
-                      {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
-                      {/* <Button
-                      onClick={this.saveRecipe(null, item.id)} >
-                      <FavoriteIcon />
-                    </Button> */}
+                      {/*make heart go red when the button is pressed to represent that it has been clicked */}
+                      <FavButton/>
                     </div>
                   </div>
                   <CardActions disableSpacing>
