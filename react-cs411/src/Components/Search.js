@@ -45,7 +45,6 @@ export default class Search extends React.Component {
         }
       }
       this.props.getSearchItem(this.state.parsed_search_item)
-      this.props.getDietOption(this.state.selected_value)
     })
   }
 
@@ -61,7 +60,10 @@ export default class Search extends React.Component {
           <h2>Diet Options</h2>
           <Radio
             checked={this.state.selected_value === "Gain muscle"}
-            onChange={() => { this.handleChange("Gain muscle") }}
+            onChange={() => {
+              this.handleChange("Gain muscle")
+              this.props.getDietOption("Gain muscle")
+            }}
             value="Gain muscle"
             name="radio-buttons"
             inputProps={{ 'aria-label': '0' }}
@@ -73,7 +75,10 @@ export default class Search extends React.Component {
           </span>
           <Radio
             checked={this.state.selected_value === "Lower body fat rate"}
-            onChange={() => { this.handleChange("Lower body fat rate") }}
+            onChange={() => {
+              this.handleChange("Lower body fat rate")
+              this.props.getDietOption("Lower body fat rate")
+            }}
             value="Lower body fat rate"
             name="radio-buttons"
             inputProps={{ 'aria-label': 'Lowering body fat rate' }}
@@ -83,7 +88,10 @@ export default class Search extends React.Component {
           >Lower body fat rate</span>
           <Radio
             checked={this.state.selected_value === "Stay in shape"}
-            onChange={() => { this.handleChange("Stay in shape") }}
+            onChange={() => {
+              this.handleChange("Stay in shape")
+              this.props.getDietOption("Stay in shape")
+            }}
             value="Stay in shape"
             name="radio-buttons"
             inputProps={{ 'aria-label': 'Stay in shape' }}
@@ -93,7 +101,10 @@ export default class Search extends React.Component {
           >Stay in shape</span>
           <Radio
             checked={this.state.selected_value === "None"}
-            onChange={() => { this.handleChange("None") }}
+            onChange={() => {
+              this.handleChange("None")
+              this.props.getDietOption("None")
+            }}
             value="None"
             name="radio-buttons"
             inputProps={{ 'aria-label': 'None' }}
