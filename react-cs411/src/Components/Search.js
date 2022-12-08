@@ -65,6 +65,7 @@ export default class Search extends React.Component {
             variant="contained"
             onClick={this.getSearchItemHandler}
             size="medium"
+            style={{ verticalAlign: "top" }}
           >Search!
           </Button>
         </div>

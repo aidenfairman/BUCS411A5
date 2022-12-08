@@ -882,7 +882,7 @@ export default class Result extends React.Component {
       recipe_list: this.state.recipe_list.map(
         (item, index) => index == item_index ? { ...item, expanded: !item.expanded } : item)
     })
-  };
+  }
 
   //Call the random recipe api for one recipt.
   queryRecipes () {
@@ -901,7 +901,7 @@ export default class Result extends React.Component {
       }
       else {
         this.setState({
-          key_index: this.state.key_index++
+          key_index: this.state.key_index + 1
         }, () => {
           this.queryRecipes()
         })
@@ -925,7 +925,7 @@ export default class Result extends React.Component {
       }
       else {
         this.setState({
-          key_index: this.state.key_index++
+          key_index: this.state.key_index + 1
         }, () => {
           this.queryRecipeTaste()
         })
@@ -1067,10 +1067,10 @@ export default class Result extends React.Component {
                   </div>
                   <div className="like-button">
                     {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
-                    <Button
+                    {/* <Button
                       onClick={this.saveRecipe(null, item.id)} >
                       <FavoriteIcon />
-                    </Button>
+                    </Button> */}
                   </div>
                 </div>
                 <CardActions disableSpacing>
