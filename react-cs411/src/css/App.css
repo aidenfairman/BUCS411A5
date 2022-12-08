@@ -105,3 +105,23 @@ header .w .login {
   line-height: 20px;
   font-size: 14px;
 }
+
+.diet_options {
+  text-align: center;
+  line-height: 42px;
+}
+
+.diet_options h2 {
+  display: inline-block;
+  color: #57a6f8;
+}
+
+.not_selected_diet_option {
+  font-size: 16px;
+}
+
+.selected_diet_option {
+  transition: 0.2s;
+  color: #2accf9;
+  font-size: 16px;
+}

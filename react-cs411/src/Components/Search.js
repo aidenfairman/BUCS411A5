@@ -1,13 +1,18 @@
 import React, { Component } from 'react'
 import TasteOptions from "./TasteOptions"
 import FavRecipes from "./FavRecipes"
-import { Button, Card, TextField } from "@mui/material"
+import { Button, Card, TextField, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from "@mui/material"
 import { textTransform } from "@mui/system"
 
 export default class Search extends React.Component {
   state = {
     search_item: "",  //Holds the input user enters. 
-    parsed_search_item: []
+    parsed_search_item: [],
+    selected_value: "None"
+  }
+
+  handleChange = (value) => {
+    this.setState({ selected_value: value })
   }
 
   //Update search_item when the input changes.
@@ -40,6 +45,7 @@ export default class Search extends React.Component {
         }
       }
       this.props.getSearchItem(this.state.parsed_search_item)
+      this.props.getDietOption(this.state.selected_value)
     })
   }
 
@@ -50,6 +56,52 @@ export default class Search extends React.Component {
         <TasteOptions />
         {/* TODO: need to pass in results from all saved recipes when we press this button */}
         <FavRecipes />
+
+        <div className="diet_options">
+          <h2>Diet Options</h2>
+          <Radio
+            checked={this.state.selected_value === "Gain muscle"}
+            onChange={() => { this.handleChange("Gain muscle") }}
+            value="Gain muscle"
+            name="radio-buttons"
+            inputProps={{ 'aria-label': '0' }}
+          />
+          <span
+            className={this.state.selected_value === "Gain muscle" ? "selected_diet_option" : "not_selected_diet_option"}
+          >
+            Gain muscle
+          </span>
+          <Radio
+            checked={this.state.selected_value === "Lowering body fat rate"}
+            onChange={() => { this.handleChange("Lowering body fat rate") }}
+            value="Lowering body fat rate"
+            name="radio-buttons"
+            inputProps={{ 'aria-label': 'Lowering body fat rate' }}
+          />
+          <span
+            className={this.state.selected_value === "Lowering body fat rate" ? "selected_diet_option" : "not_selected_diet_option"}
+          >Lowering body fat rate</span>
+          <Radio
+            checked={this.state.selected_value === "Stay in shape"}
+            onChange={() => { this.handleChange("Stay in shape") }}
+            value="Stay in shape"
+            name="radio-buttons"
+            inputProps={{ 'aria-label': 'Stay in shape' }}
+          />
+          <span
+            className={this.state.selected_value === "Stay in shape" ? "selected_diet_option" : "not_selected_diet_option"}
+          >Stay in shape</span>
+          <Radio
+            checked={this.state.selected_value === "None"}
+            onChange={() => { this.handleChange("None") }}
+            value="None"
+            name="radio-buttons"
+            inputProps={{ 'aria-label': 'None' }}
+          />
+          <span
+            className={this.state.selected_value === "None" ? "selected_diet_option" : "not_selected_diet_option"}
+          >None</span>
+        </div>
         <div className="search">
           <TextField
             type="search"

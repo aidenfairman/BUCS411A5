@@ -7,7 +7,8 @@ import Result from "./Components/Result"
 
 class App extends React.Component {
   state = {
-    parsed_search_item: []
+    parsed_search_item: [],
+    diet_option: 'None'
   }
 
   getSearchItem = (item) => {
@@ -16,12 +17,18 @@ class App extends React.Component {
     })
   }
 
+  getDietOption = (item) => {
+    this.setState({
+      diet_option: item
+    })
+  }
+
   render () {
     return (
       <>
         <Header />
-        <Search getSearchItem={this.getSearchItem} />
-        <Result parsed_search_item={this.state.parsed_search_item} />
+        <Search getSearchItem={this.getSearchItem} getDietOption={this.getDietOption} />
+        <Result parsed_search_item={this.state.parsed_search_item} diet_option={this.state.diet_option} />
       </>
     )
   }
