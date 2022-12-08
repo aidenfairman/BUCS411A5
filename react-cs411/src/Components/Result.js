@@ -839,7 +839,7 @@ export default class Result extends React.Component {
       "b589b93113194426aaf359c262390e17",
       "ad17578f923946ffb9d9fe3902c7ac0b",
       "bc3abec2a0b749d285f7b43711c11c12",
-      "8b75ca578a6942c6b2b061a122b72380"
+      "8b75ca578a6942c6b 2b061a122b72380"
     ],
     key_index: 1
   }
@@ -1048,38 +1048,9 @@ export default class Result extends React.Component {
       <div className="recipe_list w">
         <ul>
           {this.state.recipe_list.map((item, index) => (
-<<<<<<< HEAD
             <li key={item.id} className="recipe">
               {/* TODO: add margin under recipes so they spread out from one another */}
-              <Card>
-                <h1 className="recipe_title">{item.title}</h1>
-                {/* <div>{item.extendedIngredients}</div> */}
-                <div className="recipe_content clearfix">
-                  <div className="recipe_img">
-                    <img src={item.image} />
-                  </div>
-                  <div className="recipe_ingredient_list">
-                    <h2>Ingredients</h2>
-                    <ul>
-                      {item.extendedIngredients.map((ingredient, index) => (
-                        <li className="ingredient" key={index}>{ingredient.name}</li>
-                      )
-                      )}
-                    </ul>
-                  </div>
-                  <div className="like-button">
-                    {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
-                    {/* <Button
-=======
-            ((this.props.diet_option === "Gain muscle"
-              && item.nutrition_stats.good[0].percentOfDailyNeeds >= 20)
-              ||
-              (this.props.diet_option === "Lower body fat rate"
-                && item.nutrition_stats.bad[3].percentOfDailyNeeds <= 30)
-              ||
-              (this.props.diet_option === "None" || this.props.diet_option === "Stay in shape")
-            ) ?
-              <li key={item.id} className="recipe">
+              {/* TODO: add margin under recipes so they spread out from one another */}
                 <Card>
                   <h1 className="recipe_title">{item.title}</h1>
                   {/* <div>{item.extendedIngredients}</div> */}
@@ -1099,7 +1070,6 @@ export default class Result extends React.Component {
                     <div className="like-button">
                       {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
                       {/* <Button
->>>>>>> c449f40bd8743c14c86eb81cef65d135b12ff8c1
                       onClick={this.saveRecipe(null, item.id)} >
                       <FavoriteIcon />
                     </Button> */}
@@ -1176,6 +1146,7 @@ export default class Result extends React.Component {
               null
           )
           )}
+
         </ul>
       </div >
     )
