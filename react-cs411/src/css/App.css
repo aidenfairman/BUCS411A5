@@ -125,3 +125,19 @@ header .w .login {
   color: #2accf9;
   font-size: 16px;
 }
+
+.nutrition {
+  margin: 30px auto;
+  margin-top: 5px;
+  width: 734px;
+}
+
+.low_nutrition {
+  color: green;
+  font-size: 16px;
+}
+
+.high_nutrition {
+  color: red;
+  font-size: 16px;
+}

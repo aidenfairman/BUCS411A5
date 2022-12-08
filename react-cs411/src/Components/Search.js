@@ -72,15 +72,15 @@ export default class Search extends React.Component {
             Gain muscle
           </span>
           <Radio
-            checked={this.state.selected_value === "Lowering body fat rate"}
-            onChange={() => { this.handleChange("Lowering body fat rate") }}
-            value="Lowering body fat rate"
+            checked={this.state.selected_value === "Lower body fat rate"}
+            onChange={() => { this.handleChange("Lower body fat rate") }}
+            value="Lower body fat rate"
             name="radio-buttons"
             inputProps={{ 'aria-label': 'Lowering body fat rate' }}
           />
           <span
-            className={this.state.selected_value === "Lowering body fat rate" ? "selected_diet_option" : "not_selected_diet_option"}
-          >Lowering body fat rate</span>
+            className={this.state.selected_value === "Lower body fat rate" ? "selected_diet_option" : "not_selected_diet_option"}
+          >Lower body fat rate</span>
           <Radio
             checked={this.state.selected_value === "Stay in shape"}
             onChange={() => { this.handleChange("Stay in shape") }}
