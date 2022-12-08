@@ -1049,6 +1049,7 @@ export default class Result extends React.Component {
         <ul>
           {this.state.recipe_list.map((item, index) => (
             <li key={item.id} className="recipe">
+              {/* TODO: add margin under recipes so they spread out from one another */}
               <Card>
                 <h1 className="recipe_title">{item.title}</h1>
                 {/* <div>{item.extendedIngredients}</div> */}

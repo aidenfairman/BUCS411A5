@@ -4,6 +4,7 @@ import "./css/App.css"
 import Header from "./Components/Header"
 import Search from "./Components/Search"
 import Result from "./Components/Result"
+import HowToUse from "./Components/HowToUse"
 
 class App extends React.Component {
   state = {
@@ -21,6 +22,7 @@ class App extends React.Component {
       <>
         <Header />
         <Search getSearchItem={this.getSearchItem} />
+        <HowToUse />
         <Result parsed_search_item={this.state.parsed_search_item} />
       </>
     )
