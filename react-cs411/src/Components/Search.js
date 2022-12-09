@@ -119,7 +119,7 @@ export default class Search extends React.Component {
             placeholder="Enter Any Taste"
             value={this.state.search_item}
             onChange={this.searchItemChange}
-            sx={{ width: "700px" }}
+            sx={{ width: "700px", marginBottom:"50px" }}
             size="small"
           >
           </TextField>

@@ -9,6 +9,7 @@ CREATE TABLE Users(
  user_name VARCHAR(100),
  email VARCHAR(100),
  creation_date DATE,
+ diet_goals VARCHAR(100),
  password VARCHAR(100) NOT NULL,
  PRIMARY KEY (user_id)
  );
@@ -18,7 +19,7 @@ CREATE TABLE Favorites(
  name VARCHAR(100),
  date DATE,
  user_id INTEGER NOT NULL,
- PRIMARY KEY (albums_id),
+ PRIMARY KEY (recipe_id),
  FOREIGN KEY (user_id)
  REFERENCES Users(user_id)
 ); 

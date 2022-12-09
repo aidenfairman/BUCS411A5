@@ -7,6 +7,9 @@ import CardActions from '@mui/material/CardActions'
 import IconButton, { IconButtonProps } from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
 import { spacing } from '@mui/system'
+import { useState } from 'react'
+// import { useState } from 'react';
+import FavButton from "./FavButton";
 
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -839,7 +842,7 @@ export default class Result extends React.Component {
       "b589b93113194426aaf359c262390e17",
       "ad17578f923946ffb9d9fe3902c7ac0b",
       "bc3abec2a0b749d285f7b43711c11c12",
-      "8b75ca578a6942c6b2b061a122b72380"
+      "8b75ca578a6942c6b 2b061a122b72380"
     ],
     key_index: 1
   }
@@ -925,7 +928,7 @@ export default class Result extends React.Component {
 
   // Call Liked Recipes Api when to allow user to save a recipe
   saveRecipe (userID, recipeID) {
-    return axios({
+    return axios.post({
       url: 'http://localhost:8090/api/likedRecipe/addLikeRecipe',
       params: {
         userId: null, //null temporarily
@@ -966,7 +969,6 @@ export default class Result extends React.Component {
       console.log(error)
     })
   }
-
 
   //Generate a list of recipes .
   async getApplicableRecipes (queryTaste) {
@@ -1048,15 +1050,9 @@ export default class Result extends React.Component {
       <div className="recipe_list w">
         <ul>
           {this.state.recipe_list.map((item, index) => (
-            ((this.props.diet_option === "Gain muscle"
-              && item.nutrition_stats.good[0].percentOfDailyNeeds >= 20)
-              ||
-              (this.props.diet_option === "Lower body fat rate"
-                && item.nutrition_stats.bad[3].percentOfDailyNeeds <= 30)
-              ||
-              (this.props.diet_option === "None" || this.props.diet_option === "Stay in shape")
-            ) ?
-              <li key={item.id} className="recipe">
+            <li key={item.id} className="recipe">
+              {/* TODO: add margin under recipes so they spread out from one another */}
+              {/* TODO: add margin under recipes so they spread out from one another */}
                 <Card>
                   <h1 className="recipe_title">{item.title}</h1>
                   {/* <div>{item.extendedIngredients}</div> */}
@@ -1074,11 +1070,8 @@ export default class Result extends React.Component {
                       </ul>
                     </div>
                     <div className="like-button">
-                      {/* TODO: make heart go red when the button is pressed to represent that it has been clicked */}
-                      {/* <Button
-                      onClick={this.saveRecipe(null, item.id)} >
-                      <FavoriteIcon />
-                    </Button> */}
+                      {/*make heart go red when the button is pressed to represent that it has been clicked */}
+                      <FavButton/>
                     </div>
                   </div>
                   <CardActions disableSpacing>
@@ -1152,6 +1145,7 @@ export default class Result extends React.Component {
               null
           )
           )}
+
         </ul>
       </div >
     )
