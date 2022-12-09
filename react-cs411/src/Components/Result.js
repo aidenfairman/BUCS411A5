@@ -845,7 +845,7 @@ export default class Result extends React.Component {
       "bc3abec2a0b749d285f7b43711c11c12",
       "8b75ca578a6942c6b 2b061a122b72380"
     ],
-    key_index: 4
+    key_index: 0
   }
 
   handleExpandClick = (item_index) => {
@@ -1051,6 +1051,15 @@ export default class Result extends React.Component {
       <div className="recipe_list w">
         <ul>
           {this.state.recipe_list.map((item, index) => (
+            ((this.props.diet_option === "Gain muscle"
+              && item.nutrition_stats.good[0].percentOfDailyNeeds >= 20)
+              ||
+              (this.props.diet_option === "Lower body fat rate"
+                && item.nutrition_stats.bad[3].percentOfDailyNeeds <= 30)
+              ||
+              (this.props.diet_option === "None" || this.props.diet_option === "Stay in shape")
+            ) ?
+
             <li key={item.id} className="recipe">
               {/* TODO: add margin under recipes so they spread out from one another */}
               {/* TODO: add margin under recipes so they spread out from one another */}
