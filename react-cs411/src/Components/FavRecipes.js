@@ -6,7 +6,7 @@ const FavRecipes = () => {
     return(
         <div className="container">
             <div className="view-favs">
-                <Button>View Saved Recipes</Button>
+                <h1>Your Saved Recipes</h1>
             </div>
             {/* TODO: display list of saved recipes */}
             {/* TODO: delete a saved recipe */}

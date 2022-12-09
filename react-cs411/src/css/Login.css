@@ -1,4 +1,17 @@
 .login-box{
-    margin-top: 50px;
-    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.registration{
+    display: flex;
+    flex-direction: column;
+    margin-bottom:30px;
+}
+
+.login{
+    display: flex;
+    margin-bottom: 30px;
+    flex-direction: column;
 }

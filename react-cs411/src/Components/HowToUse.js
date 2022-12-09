@@ -16,7 +16,7 @@ const HowToUse = (props) => {
                     <br></br>
 
                     <Typography>Option 2: Nutrition </Typography>
-                    <Typography>Check a Diet Option and the search will only return recipes that satisfies your nutrition goals</Typography>
+                    <Typography>but after a search, by clicking on any diet option, the recipe lists will change to only show the recipes which satisfy the diet option.</Typography>
                     <Typography> Ex. <b>Search: "sweet" </b> and <b> Select: "Stay in Shape" </b> to search sweet recipes that allow you to stay in shape.</Typography>
 
                 </Card>

@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import TasteOptions from "./TasteOptions"
-import FavRecipes from "./FavRecipes"
 import { Button, Card, TextField, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from "@mui/material"
-import { textTransform } from "@mui/system"
 
 export default class Search extends React.Component {
   state = {
@@ -53,8 +51,6 @@ export default class Search extends React.Component {
       <div className="content w">
         <div className="logo">Food Search by Taste</div>
         <TasteOptions />
-        {/* TODO: need to pass in results from all saved recipes when we press this button */}
-        <FavRecipes />
 
         <div className="diet_options">
           <h2>Diet Options</h2>

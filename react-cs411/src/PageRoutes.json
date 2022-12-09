@@ -5,4 +5,8 @@
 {
     "title": "Login",
     "path": "/login"
+},
+{
+    "title": "Saved Recipes",
+    "path": "/saved-recipes"
 }]

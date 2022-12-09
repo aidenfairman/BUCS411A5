@@ -15,11 +15,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import PageRoutes from "../PageRoutes.json";
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Login'];
+const navItems = ['Home', 'Login', 'Saved Recipes'];
 
-function DrawerAppBar(props) {
+function NavBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -102,12 +103,4 @@ function DrawerAppBar(props) {
   );
 }
 
-DrawerAppBar.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
-};
-
-export default DrawerAppBar;
+export default NavBar;

@@ -8,8 +8,6 @@ export default class Header extends Component {
       < header >
         <div className="w">
           <div className="login">
-            {/* < a href="#">Please login</ a> */}
-            {/* <Link to="/login"> Please Login</Link> */}
             <Button
             component={Link}
             to="/login"

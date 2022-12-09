@@ -37,7 +37,6 @@ export default class Home extends React.Component {
   render () {
     return (
       <>
-        {/* <Header /> */}
         <Search getSearchItem={this.getSearchItem} getDietOption={this.getDietOption} />
         <HowToUse show_instruct={this.state.show_instruct} />
         <Result parsed_search_item={this.state.parsed_search_item} diet_option={this.state.diet_option} getShowInstruct={this.getShowInstruct} />

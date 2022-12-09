@@ -10,6 +10,7 @@ import { spacing } from '@mui/system'
 import { useState } from 'react'
 // import { useState } from 'react';
 import FavButton from "./FavButton"
+import Cookies from "js-cookie";
 
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -844,7 +845,7 @@ export default class Result extends React.Component {
       "bc3abec2a0b749d285f7b43711c11c12",
       "8b75ca578a6942c6b 2b061a122b72380"
     ],
-    key_index: 1
+    key_index: 4
   }
 
   handleExpandClick = (item_index) => {

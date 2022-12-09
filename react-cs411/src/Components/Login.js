@@ -1,6 +1,6 @@
 import React from 'react'
 // import TextField from '@material-ui/core/TextField';
-import { Button, TextField } from '@mui/material'
+import { Button, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
 import "../css/Login.css"
 import Axios from "axios"
@@ -52,46 +52,50 @@ function Login () {
     Axios.get("http://localhost:3001/login").then((response) => {
       if (response.data.loggedIn == true){
         setLoginStatus(response.data.user[0].user_name);
+        localStorage.setItem('user', response.data[0].user_name);
       }
     })
   }, [])
 
   return (
-    <div>
-      <NavBar />
+    <div className='login-box'>
       <div className="registration">
-        <h1>Registration</h1>
-        <label>Username</label>
+        <Typography sx={{textAlign:"center"}} variant="h5">Registration</Typography>
         <TextField
+          placeholder="Enter Username"
           type="text"
           onChange={(e) => {
             setUsernameReg(e.target.value)
           }} />
-        <label>Password</label>
+
         <TextField
+           placeholder="Enter Password"
           type="text"
           onChange={(e) => {
             setPasswordReg(e.target.value)
           }} />
-        <Button onClick={register}>Register</Button>
+        <Button variant="contained" onClick={register}>Register</Button>
       </div>
 
 
       <div className='login'>
-        <h1>login</h1>
-        <TextField type="text" placeholder="Username..."
+        <Typography sx={{textAlign:"center"}} variant="h5">Login</Typography>
+        <TextField type="text" placeholder="Enter Username"
           onChange={(e) => {
             setUsername(e.target.value)
           }} />
-        <TextField type="password" placeholder="Password.."
+        <TextField type="password" placeholder="Enter Password"
           onChange={(e) => {
             setPassword(e.target.value)
           }} />
-        <Button onClick={login}>Login</Button>
+        <Button variant="contained" onClick={login}>Login</Button>
       </div>
 
       <h1>{loginStatus}</h1>
+      <br></br>
 
+      <div className='oauth'>
+      <Typography sx={{textAlign:"center"}} variant="h5">Sign in with Google!</Typography>
       <GoogleLogin
         onSuccess={credentialResponse => {
           console.log(credentialResponse)
@@ -100,6 +104,7 @@ function Login () {
           console.log('Login Failed')
         }}
       />
+      </div>
     </div>
   )
 

@@ -66,6 +66,7 @@ header .w .login {
   border: 3px solid #57a6f8;
   border-radius: 5px;
   width: 800px;
+  margin-bottom: 50px;
 }
 
 .recipe_list .recipe .recipe_title {
