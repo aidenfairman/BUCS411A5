@@ -3,12 +3,22 @@ import React from 'react';
 import { Button, TextField} from '@mui/material';
 import { useState } from 'react';
 import "../css/Login.css"
+import Axios from "axios"
 
 function Login ()  {
   
 
   const [usernameReg, setUsernameReg] = useState('')
   const [passwordReg, setPasswordReg] = useState('')
+
+  const register = () => {
+    Axios.post("http://localhost3001/register", {
+      username: usernameReg,
+       password: passwordReg,
+      }).then((response) => {
+        console.log(response);
+      });
+  };
 
     return (
       <div>
@@ -26,7 +36,7 @@ function Login ()  {
           onChange={(e) => 
           {setPasswordReg(e.target.value);
            }} />
-          <Button>Register</Button>
+          <Button onClick={register}>Register</Button>
         </div>
         <div className='login'>
           <h1>login</h1>
