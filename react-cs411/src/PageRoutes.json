@@ -1,0 +1,8 @@
+[{
+    "title": "Home",
+    "path": "/"
+},
+{
+    "title": "Login",
+    "path": "/login"
+}]

@@ -8,6 +8,7 @@ import HowToUse from "./Components/HowToUse"
 import { Routes, Route } from "react-router-dom"
 import Login from "./Components/Login"
 import Home from "./Components/Home"
+import NavBar from "./Components/NavBar"
 
 class App extends React.Component {
   state = {
@@ -39,10 +40,13 @@ class App extends React.Component {
   // }
   render () {
     return (
+      <div>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
       </Routes>
+      </div>
     )
   }
 }

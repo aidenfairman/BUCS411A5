@@ -6,6 +6,8 @@ import "../css/Login.css"
 import Axios from "axios"
 import { GoogleLogin } from '@react-oauth/google'
 import { useEffect } from 'react'
+import Header from "./Header"
+import NavBar from "./NavBar"
 
 function Login () {
 
@@ -56,6 +58,7 @@ function Login () {
 
   return (
     <div>
+      <NavBar />
       <div className="registration">
         <h1>Registration</h1>
         <label>Username</label>
