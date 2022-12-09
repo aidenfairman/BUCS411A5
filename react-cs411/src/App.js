@@ -37,7 +37,7 @@ class App extends React.Component {
   //     </>
   //   )
   // }
-  render(){
+  render () {
     return (
       <Routes>
         <Route path="/" element={<Home />}></Route>
