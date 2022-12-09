@@ -5,6 +5,7 @@ import { useState } from 'react'
 import "../css/Login.css"
 import Axios from "axios"
 import { GoogleLogin } from '@react-oauth/google'
+import { useEffect } from 'react'
 
 function Login () {
 
@@ -16,6 +17,8 @@ function Login () {
   const [password, setPassword] = useState('')
 
   const [loginStatus, setLoginStatus] = useState('')
+
+  Axios.defaults.withCredentials = true;
 
   const register = () => {
     Axios.post("http://localhost:3001/register", {
@@ -40,6 +43,16 @@ function Login () {
       }
     })
   }
+
+// runs every time we refresh the page
+// requests to see if a user is logged in 
+  useEffect(()=> {
+    Axios.get("http://localhost:3001/login").then((response) => {
+      if (response.data.loggedIn == true){
+        setLoginStatus(response.data.user[0].user_name);
+      }
+    })
+  }, [])
 
   return (
     <div>
@@ -75,6 +88,7 @@ function Login () {
       </div>
 
       <h1>{loginStatus}</h1>
+
       <GoogleLogin
         onSuccess={credentialResponse => {
           console.log(credentialResponse)
