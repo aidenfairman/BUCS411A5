@@ -19,7 +19,7 @@ CREATE TABLE Favorites(
  name VARCHAR(100),
  date DATE,
  user_id INTEGER NOT NULL,
- PRIMARY KEY (albums_id),
+ PRIMARY KEY (recipe_id),
  FOREIGN KEY (user_id)
  REFERENCES Users(user_id)
 ); 
