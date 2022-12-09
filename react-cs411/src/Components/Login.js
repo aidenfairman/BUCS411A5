@@ -8,8 +8,13 @@ import Axios from "axios"
 function Login ()  {
   
 
-  const [usernameReg, setUsernameReg] = useState('')
-  const [passwordReg, setPasswordReg] = useState('')
+  const [usernameReg, setUsernameReg] = useState('');
+  const [passwordReg, setPasswordReg] = useState('');
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const [loginStatus, setLoginStatus] = useState('');
 
   const register = () => {
     Axios.post("http://localhost:3001/register", {
@@ -17,6 +22,21 @@ function Login ()  {
        password: passwordReg,
       }).then((response) => {
         console.log(response);
+      });
+  };
+
+  const login = () => {
+    Axios.post("http://localhost:3001/login", {
+      username: username,
+       password: password,
+      }).then((response) => {
+
+        if (response.data.message){
+          setLoginStatus(response.data.message);
+        } else {
+          setLoginStatus(response.data[0].user_name);
+          console.log(response);
+        }
       });
   };
 
@@ -38,12 +58,22 @@ function Login ()  {
            }} />
           <Button onClick={register}>Register</Button>
         </div>
+
+
         <div className='login'>
           <h1>login</h1>
-          <TextField type="text" placeholder="Username..."/ >
-          <TextField type="password" placeholder="Password../" />
-          <Button>Login</Button>
+          <TextField type="text" placeholder="Username..."
+          onChange={(e) => 
+          {setUsername(e.target.value);
+           }} />
+          <TextField type="password" placeholder="Password.." 
+            onChange={(e) => 
+          {setPassword(e.target.value);
+           }} />
+          <Button onClick={login}>Login</Button>
         </div>
+
+        <h1>{loginStatus}</h1>
       </div>
     );
 
