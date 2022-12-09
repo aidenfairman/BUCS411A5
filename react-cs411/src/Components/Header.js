@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+import { Button } from '@mui/material';
 
 export default class Header extends Component {
   render () {
@@ -6,7 +8,14 @@ export default class Header extends Component {
       < header >
         <div className="w">
           <div className="login">
-            < a href="#">Please login</ a>
+            {/* < a href="#">Please login</ a> */}
+            {/* <Link to="/login"> Please Login</Link> */}
+            <Button
+            component={Link}
+            to="/login"
+            sx={{color:"white"}}>
+             Please Login
+            </Button>
           </div>
         </div>
       </header >
