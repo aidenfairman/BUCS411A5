@@ -9,7 +9,7 @@ import { styled } from '@mui/material/styles'
 import { spacing } from '@mui/system'
 import { useState } from 'react'
 // import { useState } from 'react';
-import FavButton from "./FavButton";
+import FavButton from "./FavButton"
 
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -1040,7 +1040,7 @@ export default class Result extends React.Component {
     if (nextProps.parsed_search_item !== this.props.parsed_search_item) {
       this.setState({
         recipe_list: []
-      }, () => { this.getApplicableRecipes(nextProps.parsed_search_item) })
+      }, () => { this.getApplicableRecipes(nextProps.parsed_search_item); this.props.getShowInstruct(false) })
       //If it is a different input, regenerate the recipe list.
     }
   }
@@ -1053,96 +1053,96 @@ export default class Result extends React.Component {
             <li key={item.id} className="recipe">
               {/* TODO: add margin under recipes so they spread out from one another */}
               {/* TODO: add margin under recipes so they spread out from one another */}
-                <Card>
-                  <h1 className="recipe_title">{item.title}</h1>
-                  {/* <div>{item.extendedIngredients}</div> */}
-                  <div className="recipe_content clearfix">
-                    <div className="recipe_img">
-                      <img src={item.image} />
-                    </div>
-                    <div className="recipe_ingredient_list">
-                      <h2>Ingredients</h2>
-                      <ul>
-                        {item.extendedIngredients.map((ingredient, index) => (
-                          <li className="ingredient" key={index}>{ingredient.name}</li>
-                        )
-                        )}
-                      </ul>
-                    </div>
-                    <div className="like-button">
-                      {/*make heart go red when the button is pressed to represent that it has been clicked */}
-                      <FavButton/>
-                    </div>
+              <Card>
+                <h1 className="recipe_title">{item.title}</h1>
+                {/* <div>{item.extendedIngredients}</div> */}
+                <div className="recipe_content clearfix">
+                  <div className="recipe_img">
+                    <img src={item.image} />
                   </div>
-                  <CardActions disableSpacing>
-                    <ExpandMore
-                      expand={item.expanded}
-                      onClick={() => { this.handleExpandClick(index) }}
-                      aria-expanded={item.expanded}
-                      aria-label="show more"
-                    >
-                      <ExpandMoreIcon />
-                    </ExpandMore>
-                  </CardActions>
-                  <Collapse in={item.expanded} timeout="auto" unmountOnExit>
-                    <h2 style={{ marginLeft: "30px" }}>Instructions</h2>
-                    <div className={"instructions"}
-                      dangerouslySetInnerHTML={
-                        {
-                          __html: item.instructions
-                        }
-                      }></div>
-                    <h2 style={{ marginLeft: "30px" }}>Nutrition</h2>
-                    <div className="nutrition">
-                      {item.nutrition_stats.bad[0].percentOfDailyNeeds >= 20 ?
-                        <div className="high_nutrition">High Calories:&nbsp;
-                          {item.nutrition_stats.bad[0].percentOfDailyNeeds}
-                          (Percent of Daily Needs)
-                        </div>
-                        : <div className='low_nutrition'>Low Calories:&nbsp;
-                          {item.nutrition_stats.bad[0].percentOfDailyNeeds}
-                          (Percent of Daily Needs)
-                        </div>
+                  <div className="recipe_ingredient_list">
+                    <h2>Ingredients</h2>
+                    <ul>
+                      {item.extendedIngredients.map((ingredient, index) => (
+                        <li className="ingredient" key={index}>{ingredient.name}</li>
+                      )
+                      )}
+                    </ul>
+                  </div>
+                  <div className="like-button">
+                    {/*make heart go red when the button is pressed to represent that it has been clicked */}
+                    <FavButton />
+                  </div>
+                </div>
+                <CardActions disableSpacing>
+                  <ExpandMore
+                    expand={item.expanded}
+                    onClick={() => { this.handleExpandClick(index) }}
+                    aria-expanded={item.expanded}
+                    aria-label="show more"
+                  >
+                    <ExpandMoreIcon />
+                  </ExpandMore>
+                </CardActions>
+                <Collapse in={item.expanded} timeout="auto" unmountOnExit>
+                  <h2 style={{ marginLeft: "30px" }}>Instructions</h2>
+                  <div className={"instructions"}
+                    dangerouslySetInnerHTML={
+                      {
+                        __html: item.instructions
                       }
-                      {item.nutrition_stats.bad[1].percentOfDailyNeeds
-                        + item.nutrition_stats.bad[2].percentOfDailyNeeds >= 15 ?
-                        <div className="high_nutrition">High Fat:&nbsp;
-                          {item.nutrition_stats.bad[1].percentOfDailyNeeds
-                            + item.nutrition_stats.bad[2].percentOfDailyNeeds}
-                          (Percent of Daily Needs)
-                        </div>
-                        : <div className="low_nutrition">Low Fat:&nbsp;
-                          {item.nutrition_stats.bad[1].percentOfDailyNeeds
-                            + item.nutrition_stats.bad[2].percentOfDailyNeeds}
-                          (Percent of Daily Needs)
-                        </div>
-                      }
-                      {item.nutrition_stats.bad[3].percentOfDailyNeeds >= 30 ?
-                        <div className="high_nutrition">High Carbohydrates:&nbsp;
-                          {item.nutrition_stats.bad[3].percentOfDailyNeeds}
-                          (Percent of Daily Needs)
-                        </div>
-                        : <div className="low_nutrition">Low Carbohydrates:&nbsp;
-                          {item.nutrition_stats.bad[3].percentOfDailyNeeds}
-                          (Percent of Daily Needs)
-                        </div>
-                      }
-                      {item.nutrition_stats.good[0].percentOfDailyNeeds >= 20 ?
-                        <div className="low_nutrition">High Protein:&nbsp;
-                          {item.nutrition_stats.good[0].percentOfDailyNeeds}
-                          (Percent of Daily Needs)
-                        </div>
-                        : <div className="high_nutrition">Low Protein:&nbsp;
-                          {item.nutrition_stats.good[0].percentOfDailyNeeds}
-                          (Percent of Daily Needs)
-                        </div>
-                      }
-                    </div>
-                  </Collapse>
-                </Card>
-              </li>
+                    }></div>
+                  <h2 style={{ marginLeft: "30px" }}>Nutrition</h2>
+                  <div className="nutrition">
+                    {item.nutrition_stats.bad[0].percentOfDailyNeeds >= 20 ?
+                      <div className="high_nutrition">High Calories:&nbsp;
+                        {item.nutrition_stats.bad[0].percentOfDailyNeeds}
+                        (Percent of Daily Needs)
+                      </div>
+                      : <div className='low_nutrition'>Low Calories:&nbsp;
+                        {item.nutrition_stats.bad[0].percentOfDailyNeeds}
+                        (Percent of Daily Needs)
+                      </div>
+                    }
+                    {item.nutrition_stats.bad[1].percentOfDailyNeeds
+                      + item.nutrition_stats.bad[2].percentOfDailyNeeds >= 15 ?
+                      <div className="high_nutrition">High Fat:&nbsp;
+                        {item.nutrition_stats.bad[1].percentOfDailyNeeds
+                          + item.nutrition_stats.bad[2].percentOfDailyNeeds}
+                        (Percent of Daily Needs)
+                      </div>
+                      : <div className="low_nutrition">Low Fat:&nbsp;
+                        {item.nutrition_stats.bad[1].percentOfDailyNeeds
+                          + item.nutrition_stats.bad[2].percentOfDailyNeeds}
+                        (Percent of Daily Needs)
+                      </div>
+                    }
+                    {item.nutrition_stats.bad[3].percentOfDailyNeeds >= 30 ?
+                      <div className="high_nutrition">High Carbohydrates:&nbsp;
+                        {item.nutrition_stats.bad[3].percentOfDailyNeeds}
+                        (Percent of Daily Needs)
+                      </div>
+                      : <div className="low_nutrition">Low Carbohydrates:&nbsp;
+                        {item.nutrition_stats.bad[3].percentOfDailyNeeds}
+                        (Percent of Daily Needs)
+                      </div>
+                    }
+                    {item.nutrition_stats.good[0].percentOfDailyNeeds >= 20 ?
+                      <div className="low_nutrition">High Protein:&nbsp;
+                        {item.nutrition_stats.good[0].percentOfDailyNeeds}
+                        (Percent of Daily Needs)
+                      </div>
+                      : <div className="high_nutrition">Low Protein:&nbsp;
+                        {item.nutrition_stats.good[0].percentOfDailyNeeds}
+                        (Percent of Daily Needs)
+                      </div>
+                    }
+                  </div>
+                </Collapse>
+              </Card>
+            </li>
               :
-              null
+          null
           )
           )}
 
