@@ -12,7 +12,7 @@ import Home from "./Components/Home"
 class App extends React.Component {
   state = {
     parsed_search_item: [],
-    diet_option: 'None'
+    diet_option: 'None',
   }
 
   getSearchItem = (item) => {
