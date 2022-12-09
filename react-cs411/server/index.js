@@ -10,16 +10,16 @@ app.use(cors());
 const db = mysql.createConnection({
     user:"root",
     host:"localhost",
-    password:"Renaissance2022!",
+    password:"hotdog1234",
     database:"SearchByTaste",
 });
 
-app.post("/register", (req, res) => {
+app.post('/register', (req, res) => {
     
     const username = req.body.username; 
     const password = req.body.password;
     db.query(
-        "INSERT INTO user (username, password) VALUES (?,?)",
+        "INSERT INTO Users (user_name, password) VALUES (?,?)",
         [username,password], 
         (err, result) => {
             console.log(err);
