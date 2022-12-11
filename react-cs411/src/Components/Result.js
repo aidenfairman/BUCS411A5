@@ -29,6 +29,9 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }))
 
 export default class Result extends React.Component {
+
+  const [userStatus, setUserStatus] = useState('')
+
   state = {
     recipe_list: [{
       "vegetarian": false,
@@ -970,6 +973,14 @@ export default class Result extends React.Component {
       console.log(error)
     })
   }
+
+  useEffect(()=> {
+    Axios.get("http://localhost:3001/login").then((response) => {
+      if (response.data.loggedIn == true){
+        setUserStatus(response.data.user[0].user_name);
+      }
+    })
+  }, []);
 
   //Generate a list of recipes .
   async getApplicableRecipes (queryTaste) {
