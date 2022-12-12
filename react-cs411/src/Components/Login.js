@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { createContext } from 'react'
 // import TextField from '@material-ui/core/TextField';
 import { Button, TextField, Typography } from '@mui/material'
 import { useState } from 'react'
@@ -8,9 +8,12 @@ import { GoogleLogin } from '@react-oauth/google'
 import { useEffect } from 'react'
 import Header from "./Header"
 import NavBar from "./NavBar"
+import Result from './Result'
+
 
 function Login () {
 
+  const UsernameContext = createContext();
 
   const [usernameReg, setUsernameReg] = useState('')
   const [passwordReg, setPasswordReg] = useState('')
@@ -104,6 +107,9 @@ function Login () {
           console.log('Login Failed')
         }}
       />
+      </div>
+      <div>
+      <Result username={usernameReg} />
       </div>
     </div>
   )

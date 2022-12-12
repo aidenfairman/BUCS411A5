@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import TasteOptions from "./TasteOptions"
 import { Button, Card, TextField, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from "@mui/material"
 

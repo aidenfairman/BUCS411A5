@@ -10,6 +10,7 @@ import { spacing } from '@mui/system'
 import { useState } from 'react'
 // import { useState } from 'react';
 import FavButton from "./FavButton"
+import FavRecipes from "./FavRecipes"
 import Cookies from "js-cookie";
 
 
@@ -29,9 +30,6 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }))
 
 export default class Result extends React.Component {
-
-  const [userStatus, setUserStatus] = useState('')
-
   state = {
     recipe_list: [{
       "vegetarian": false,
@@ -848,7 +846,9 @@ export default class Result extends React.Component {
       "bc3abec2a0b749d285f7b43711c11c12",
       "8b75ca578a6942c6b 2b061a122b72380"
     ],
-    key_index: 0
+    key_index: 0,
+
+    username:[]
   }
 
   handleExpandClick = (item_index) => {
@@ -974,14 +974,6 @@ export default class Result extends React.Component {
     })
   }
 
-  useEffect(()=> {
-    Axios.get("http://localhost:3001/login").then((response) => {
-      if (response.data.loggedIn == true){
-        setUserStatus(response.data.user[0].user_name);
-      }
-    })
-  }, []);
-
   //Generate a list of recipes .
   async getApplicableRecipes (queryTaste) {
     //Number of recipes returned.
@@ -1047,6 +1039,7 @@ export default class Result extends React.Component {
     console.log(this.state.recipe_list)
   }
 
+
   //Monitor change of search item and call getApplicableRecipes if there is a change.
   componentWillReceiveProps (nextProps) {
     if (nextProps.parsed_search_item !== this.props.parsed_search_item) {
@@ -1057,7 +1050,12 @@ export default class Result extends React.Component {
     }
   }
 
+  handleFavButton (username, recipeId) {
+    this.saveRecipe(username, recipeId)
+  }
+
   render () {
+    const { username } = this.props;
     return (
       <div className="recipe_list w">
         <ul>
@@ -1072,8 +1070,6 @@ export default class Result extends React.Component {
             ) ?
 
             <li key={item.id} className="recipe">
-              {/* TODO: add margin under recipes so they spread out from one another */}
-              {/* TODO: add margin under recipes so they spread out from one another */}
               <Card>
                 <h1 className="recipe_title">{item.title}</h1>
                 {/* <div>{item.extendedIngredients}</div> */}
@@ -1092,7 +1088,8 @@ export default class Result extends React.Component {
                   </div>
                   <div className="like-button">
                     {/*make heart go red when the button is pressed to represent that it has been clicked */}
-                    <FavButton />
+                    <FavButton username={username} recipeId={item.id} />
+                    <FavRecipes username={username} recipeId={item.id}/>
                   </div>
                 </div>
                 <CardActions disableSpacing>
