@@ -1088,8 +1088,8 @@ export default class Result extends React.Component {
                   </div>
                   <div className="like-button">
                     {/*make heart go red when the button is pressed to represent that it has been clicked */}
-                    <FavButton username={username} recipeId={item.id} />
-                    <FavRecipes username={username} recipeId={item.id}/>
+                    <FavButton username={username} recipeId={item.title} />
+                    {/* <FavRecipes username={username} recipeId={item.title}/> */}
                   </div>
                 </div>
                 <CardActions disableSpacing>

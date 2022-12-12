@@ -16,6 +16,7 @@ function FavButton(username, recipeId) {
         recipeId: recipe
       }
     }).then(response => {
+      console.log(response.data)
       return response.data
     }).catch((error) => {
       console.log(error)
