@@ -1165,7 +1165,7 @@ export default class Result extends React.Component {
           )}
 
         </ul>
-      </div >
+      </div>
     )
   }
 }
